@@ -1,5 +1,7 @@
 ---
 title: "Capstone Project Proposal"
+author: "Sitruks"
+date: "April 26, 2018"
 output: html_document
 ---
 
