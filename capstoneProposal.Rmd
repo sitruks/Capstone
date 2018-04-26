@@ -25,6 +25,8 @@ The following metrics will be used:
 - Tournament Record  
 - Home Record  
 - Away Record  
+- First Half Points Scored v. Second Half  
+
 
 ##### **Data**
 Fortunately, this data is readily available from [Kaggle](https://www.kaggle.com/c/mens-machine-learning-competition-2018/data). Some other data cleaning and sourcing may be required.
