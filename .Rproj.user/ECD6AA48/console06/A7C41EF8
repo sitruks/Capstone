@@ -323,4 +323,162 @@ nothing added to commit but untracked files present (use "git add" to track)[0K
 [0K[?25h[?25l
 [0;32msanti@BRICK [0;35m [0;33m~/Documents/Capstone[0;36m (master)[0m[0K
 $[0K[3G[?25h[?25l$ git status[0K[?25h[?25l$ touch .gitignore[0K[13G[?25h[19G[?25l$ git status[0K[?25h[?25l$ git stash[0K[?25h[?25l$ git status[0K[?25h[?25l$ git add --all[0K[?25h[?25l
+[0K[?25hwarning: LF will be replaced by CRLF in .Rhistory.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/pcs/files-pane.pper[0K.[?25l
+[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/pcs/source-pane.ppe[0Kr
+.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/pcs/windowlayoutsta[0Kt[?25l
+e.pper.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/pcs/workbench-pane.[0Kp
+per.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/rmd-outputs.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/sources/prop/96A340[0KC[1G[?25h[?25l
+3.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/sources/prop/DC9487[0KB
+.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/sources/prop/FACCDB[0KF
+2.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/sources/prop/INDEX.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/sources/s-41541491/[0K5
+C7057CA.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/sources/s-41541491/[0K5
+C7057CA-contents.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/sources/s-41541491/[0K8[?25l
+1299A62-contents.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/sources/s-41541491/[0KB
+11CB3F2.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/sources/s-41541491/[0KE[2G[?25h[?25l
+6A8C75E.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/sources/s-41541491/[0KE
+BED2CB8.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/sources/s-41541491/[0KE
+BED2CB8-contents.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25lwarning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K[1G[?25h[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25l
+[0;32msanti@BRICK [0;35m [0;33m~/Documents/Capstone[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[3G[?25h[4G[?25l$ git commit -m"added RData and data folder into gitignore"[0K[?25h[?25l
+[0K[?25h[master 6e87f7b] added RData and data folder into gitignore[0K[?25l
+ 30 files changed, 534 insertions(+)[0K
+ create mode 100644 .Rhistory[0K
+ create mode 100644 .Rproj.user/ECD6AA48/console06/A7C41EF8[0K
+ create mode 100644 .Rproj.user/ECD6AA48/console06/INDEX001[0K
+ create mode 100644 .Rproj.user/ECD6AA48/pcs/files-pane.pper[0K
+ create mode 100644 .Rproj.user/ECD6AA48/pcs/source-pane.pper[0K
+ create mode 100644 .Rproj.user/ECD6AA48/pcs/windowlayoutstate.pper[0K
+ create mode 100644 .Rproj.user/ECD6AA48/pcs/workbench-pane.pper[0K
+ create mode 100644 .Rproj.user/ECD6AA48/rmd-outputs[0K
+ create mode 100644 .Rproj.user/ECD6AA48/saved_source_markers[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/prop/96A340C3[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/prop/DC9487B[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/prop/FACCDBF2[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/prop/INDEX[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/s-41541491/5C7057CA[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/s-41541491/5C7057CA-contents[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/s-41541491/81299A62-contents[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/s-41541491/B11CB3F2[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/s-41541491/B11CB3F2-contents[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/s-41541491/E6A8C75E[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/s-41541491/E6A8C75E-contents[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/s-41541491/EBED2CB8[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/s-41541491/EBED2CB8-contents[0K
+ create mode 100644 .Rproj.user/ECD6AA48/sources/s-41541491/lock_file[0K
+ create mode 100644 .Rproj.user/ECD6AA48/viewer-cache/35ED3E1B.Rdata[0K
+ create mode 100644 .Rproj.user/ECD6AA48/viewer-cache/9A60A097.Rdata[0K
+ create mode 100644 .Rproj.user/shared/notebooks/4326344E-capstoneProposal/1/ECD[0K6
+AA4843338BE7/chunks.json[0K
+ create mode 100644 .Rproj.user/shared/notebooks/4326344E-capstoneProposal/1/s/c[0Kh
+unks.json[0K
+ create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names[0K
+ create mode 100644 .Rproj.user/shared/notebooks/paths[0K
+ create mode 100644 .gitignore[0K
+[0K[?25h[?25l
+[0;32msanti@BRICK [0;35m [0;33m~/Documents/Capstone[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push m[0K[?25h[?25l$ git push[0K[12G[?25h[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
+[0K[?25hTo https://github.com/sitruks/Capstone[0K[?25l
+ ! [rejected]        master -> master (fetch first)[0K
+error: failed to push some refs to 'https://github.com/sitruks/Capstone'[0K
+[0K[?25hhint: Updates were rejected because the remote contains work that you do[0K[?25l
+hint: not have locally. This is usually caused by another repository pushing[0K
+hint: to the same ref. You may want to first integrate the remote changes[0K
+hint: (e.g., 'git pull ...') before pushing again.[0K
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.[0K
+[0K[?25h[?25l
+[0;32msanti@BRICK [0;35m [0;33m~/Documents/Capstone[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Kl[0Kl[0K[12G[?25l$ git pull o[0K[?25hr[0Ko[0Kg[0Ki[0Kn[0K[?25l$ git pull orogi[0K[?25h[?25l$ git pull orog[0K[?25h[?25l$ git pull oro[0K[?25h[?25l$ git pull or[0K[?25h[?25li[0K[14G[?25h[15G[?25l$ git pull orig[0K[?25hi[0Kn[0K[19G[?25l$ git pull origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
+[0K[?25hremote: Counting objects: 24, done.[0K[?25l
+remote: Compressing objects: 100% (16/16), done.[0K
+remote: Total 24 (delta 8), reused 22 (delta 6), pack-reused 0[0K
+[0K[?25h[?25lUnpacking objects:  20% (5/24)[0K[1G[?25h[?25lUnpacking objects:  45% (11/24)[0K[1G[?25h[?25lUnpacking objects:  87% (21/24)[0K[2G[?25h[?25lUnpacking objects:  91% (22/24)[0K[1G[?25hUnpacking objects: 100% (24/24), done.[0K[?25l
+[0K[?25hFrom https://github.com/sitruks/Capstone[0K[?25l
+ * branch            master     -> FETCH_HEAD[0K
+[0K[?25h   671f9f8..e2b1f59  master     -> origin/master[0K[?25l
+[0K[?25hAuto-merging .gitignore[0K[?25l
+CONFLICT (add/add): Merge conflict in .gitignore[0K
+Automatic merge failed; fix conflicts and then commit the result.[0K
+[0K[?25h[?25l
+[0;32msanti@BRICK [0;35m [0;33m~/Documents/Capstone[0;36m (master|MERGING)[0m[0K
+$[0K[3G[?25h[?25l$ git pull origin master[0K[3G[?25h[25G[?25l$ git push origin master[0K[?25h[?25l
+[0K[?25hTo https://github.com/sitruks/Capstone[0K[?25l
+ ! [rejected]        master -> master (non-fast-forward)[0K
+error: failed to push some refs to 'https://github.com/sitruks/Capstone'[0K
+[0K[?25hhint: Updates were rejected because the tip of your current branch is behind[0K[?25l
+hint: its remote counterpart. Integrate the remote changes (e.g.[0K
+hint: 'git pull ...') before pushing again.[0K
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.[0K
+[0K[?25h[?25l
+[0;32msanti@BRICK [0;35m [0;33m~/Documents/Capstone[0;36m (master|MERGING)[0m[0K
+$[0K[3G[?25h[?25l$ git push origin master[0K[?25h[?25l$ git pull origin master[0K[?25h[?25l$ git push origin master[0K[?25h[?25l$ git pull origin master[0K[?25h[?25l$ git push origin master[0K[?25h[?25l$ git commit -m"added RData and data folder into gitignore"[0K[?25h[?25l$ git add --all[0K[?25h[?25l$ git status[0K[?25h[?25l
+[0K[?25hOn branch master[0K[?25l
+Your branch and 'origin/master' have diverged,[0K
+and have 1 and 6 different commits each, respectively.[0K
+  (use "git pull" to merge the remote branch into yours)[0K
+[0K
+You have unmerged paths.[0K
+  (fix conflicts and run "git commit")[0K
+  (use "git merge --abort" to abort the merge)[0K
+[0K
+Changes to be committed:[0K
+[0K
+        [0;32mnew file:   Capstone_DS.Rproj[0m[0K
+        [0;32mmodified:   README.md[0m[0K
+        [0;32mnew file:   Wrangle/1_Basic_Data_Manipulation/basicDataManipulation.Rmd[0m[0K
+        [0;32mnew file:   Wrangle/1_Basic_Data_Manipulation/refine.csv[0m[0K
+        [0;32mmodified:   capstoneProposal.Rmd[0m[0K
+[0K
+Unmerged paths:[0K
+  (use "git add <file>..." to mark resolution)[0K
+[0K
+        [0;31mboth added:      .gitignore[0m[0K[9G[?25h[?25l
+[0K
+Changes not staged for commit:[0K
+  (use "git add <file>..." to update what will be committed)[0K
+  (use "git checkout -- <file>..." to discard changes in working directory)[0K
+[0K
+        [0;31mmodified:   .Rproj.user/ECD6AA48/console06/A7C41EF8[0m[0K
+        [0;31mmodified:   .Rproj.user/ECD6AA48/sources/prop/FACCDBF2[0m[0K
+        [0;31mmodified:   .Rproj.user/ECD6AA48/sources/s-41541491/EBED2CB8[0m[0K
+        [0;31mmodified:   .Rproj.user/ECD6AA48/sources/s-41541491/EBED2CB8-contents[0m[0K
+[0K
+[0K[?25h[?25l
+[0;32msanti@BRICK [0;35m [0;33m~/Documents/Capstone[0;36m (master|MERGING)[0m[0K
+$[0K[3G[?25h[?25l$ git status[0K[?25h[?25l$ git push origin master[0K[?25h[?25l$ git pull origin master[0K[?25h[?25l$ git push origin master[0K[?25h[?25l$ git commit -m"added RData and data folder into gitignore"[0K[?25h[?25l$ git add --all[0K[?25h[?25l
 [0K[?25h
