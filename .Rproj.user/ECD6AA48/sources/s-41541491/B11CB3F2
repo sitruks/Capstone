@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1524540075052.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B11CB3F2",
+    "lastKnownWriteTime" : 5292976843906638626,
+    "last_content_update" : 1524540075052,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "35ED3E1B",
+        "caption" : "ConferenceTourneyGames",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=ConferenceTourneyGames&cache_key=35ED3E1B",
+        "displayedObservations" : 4563,
+        "environment" : "",
+        "object" : "ConferenceTourneyGames",
+        "preview" : 0,
+        "totalObservations" : 4563,
+        "variables" : 5
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
