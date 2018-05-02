@@ -3,8 +3,13 @@ title: "Data Manipulation"
 author: "Sitruks"
 date: "April 26, 2018"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
+### Data Wrangling Exercise 1:  
+
+```{refine}
 library(tidyverse)
 library(forcats)
 refine <- tbl_df(read_csv("Wrangle/1_Basic_Data_Manipulation/refine.csv"))
@@ -32,19 +37,30 @@ refine <- refine %>%
                   ) %>% 
             select(-company, companies, product_category, everything()) %>%
             rename(c("companies" = "company")) %>% 
-            arrange(company, product_category) 
+            arrange(company, product_category)
 
+```
 
+* For Testing
 
 
 refine <- read_csv("Wrangle/1_Basic_Data_Manipulation/refine.csv") 
 
 company_distinct <- refine %>% group_by(company) %>% summarise(distinct = n_distinct(company)) %>% select(company) %>% c()
 
-refine <- refine %>% sub(pattern = "^p|^f", replacement = "philips", x = refine)
+refine <- refine %>% sub(pattern = "^p\|^f", replacement = "philips", x = refine)
           
-          
-          %>% 
+* Does not work  
+
           sub(pattern = "'ak zo'|akz0|akzo|Akzo|AKZO", replacement = "akzo", x = refine) %>% 
           sub(pattern = "'van houten'|'van Houten'|'Van Houten'", replacement = "van houten", x = refine) %>% 
-          sub(pattern = "unilever|Unilever|unilver", replacement = "unilever", x = refine)
+          sub(pattern = "unilever|Unilever|unilver", replacement = "unilever", x = refine)  
+      
+### Data Wrangling Exercise 2: 
+
+
+
+
+
+
+
