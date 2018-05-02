@@ -130,7 +130,7 @@ $(document).ready(function () {
 <h3>Data Wrangling Exercise 1:</h3>
 <pre class="refine"><code>library(tidyverse)
 library(forcats)
-refine &lt;- tbl_df(read_csv(&quot;Wrangle/1_reBasic_Data_Manipulation/refine_original.csv&quot;))
+refine &lt;- tbl_df(read_csv(&quot;Wrangle/1_Basic_Data_Manipulation/refine_original.csv&quot;))
 refine &lt;- refine %&gt;% 
            separate('Product code / number', into = c(&quot;product_code&quot;, &quot;product_number&quot;)) %&gt;% 
            mutate(companies = if_else(grepl(&quot;^p|^P|^f|^F&quot;, company), &quot;philips&quot;,
@@ -172,9 +172,6 @@ refine &lt;- refine %&gt;%
 <h4>For Testing</h4>
 <p>company_distinct &lt;- refine %&gt;% group_by(company) %&gt;% summarise(distinct = n_distinct(company)) %&gt;% select(company) %&gt;% c()</p>
 </div>
-</div>
-<div id="data-wrangling-exercise-2" class="section level3">
-<h3>Data Wrangling Exercise 2:</h3>
 </div>
 
 
