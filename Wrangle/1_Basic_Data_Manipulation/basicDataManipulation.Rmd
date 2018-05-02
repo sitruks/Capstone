@@ -12,7 +12,7 @@ editor_options:
 ```{refine}
 library(tidyverse)
 library(forcats)
-refine <- tbl_df(read_csv("Wrangle/1_Basic_Data_Manipulation/refine.csv"))
+refine <- tbl_df(read_csv("Wrangle/1_reBasic_Data_Manipulation/refine_original.csv"))
 refine <- refine %>% 
            separate('Product code / number', into = c("product_code", "product_number")) %>% 
            mutate(companies = if_else(grepl("^p|^P|^f|^F", company), "philips",
@@ -35,26 +35,27 @@ refine <- refine %>%
                 product_laptop = if_else(grepl("x", product_code), 1, 0),
                 product_tablet = if_else(grepl("q", product_code), 1, 0)
                   ) %>% 
-            select(-company, companies, product_category, everything()) %>%
-            rename(c("companies" = "company")) %>% 
-            arrange(company, product_category)
+            select(-company) %>%
+            select(companies, product_category, everything()) %>% 
+            write_csv(refine, "Wrangle/1_Basic_Data_Manipulation/refine_clean.csv")
 
 ```
-
-* For Testing
-
-
-refine <- read_csv("Wrangle/1_Basic_Data_Manipulation/refine.csv") 
-
-company_distinct <- refine %>% group_by(company) %>% summarise(distinct = n_distinct(company)) %>% select(company) %>% c()
-
-refine <- refine %>% sub(pattern = "^p\|^f", replacement = "philips", x = refine)
-          
-* Does not work  
+####Does not work
+* rename(companies = company) %>% 
+* attempt at using sub instead of grepl.  
+`refine <- refine %>% sub(pattern = "^p\|^f", replacement = "philips", x = refine)
+ `
 
           sub(pattern = "'ak zo'|akz0|akzo|Akzo|AKZO", replacement = "akzo", x = refine) %>% 
           sub(pattern = "'van houten'|'van Houten'|'Van Houten'", replacement = "van houten", x = refine) %>% 
           sub(pattern = "unilever|Unilever|unilver", replacement = "unilever", x = refine)  
+
+####For Testing
+
+company_distinct <- refine %>% group_by(company) %>% summarise(distinct = n_distinct(company)) %>% select(company) %>% c()
+
+
+
       
 ### Data Wrangling Exercise 2: 
 

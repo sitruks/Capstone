@@ -126,13 +126,11 @@ $(document).ready(function () {
 </div>
 
 
-<div id="data-wrangling-exercise-1" class="section level2">
-<h2>Data Wrangling Exercise 1:</h2>
-<div id="basic-data-manipulation" class="section level3">
-<h3>Basic Data Manipulation</h3>
+<div id="data-wrangling-exercise-1" class="section level3">
+<h3>Data Wrangling Exercise 1:</h3>
 <pre class="refine"><code>library(tidyverse)
 library(forcats)
-refine &lt;- tbl_df(read_csv(&quot;Wrangle/1_Basic_Data_Manipulation/refine.csv&quot;))
+refine &lt;- tbl_df(read_csv(&quot;Wrangle/1_reBasic_Data_Manipulation/refine_original.csv&quot;))
 refine &lt;- refine %&gt;% 
            separate('Product code / number', into = c(&quot;product_code&quot;, &quot;product_number&quot;)) %&gt;% 
            mutate(companies = if_else(grepl(&quot;^p|^P|^f|^F&quot;, company), &quot;philips&quot;,
@@ -155,23 +153,28 @@ refine &lt;- refine %&gt;%
                 product_laptop = if_else(grepl(&quot;x&quot;, product_code), 1, 0),
                 product_tablet = if_else(grepl(&quot;q&quot;, product_code), 1, 0)
                   ) %&gt;% 
-            select(-company, companies, product_category, everything()) %&gt;%
-            rename(c(&quot;companies&quot; = &quot;company&quot;)) %&gt;% 
-            arrange(company, product_category)
+            select(-company) %&gt;%
+            select(companies, product_category, everything()) %&gt;% 
+            write_csv(refine, &quot;Wrangle/1_Basic_Data_Manipulation/refine_clean.csv&quot;)
 </code></pre>
+<div id="does-not-work" class="section level4">
+<h4>Does not work</h4>
 <ul>
-<li>For Testing</li>
-</ul>
-<p>refine &lt;- read_csv(“Wrangle/1_Basic_Data_Manipulation/refine.csv”)</p>
-<p>company_distinct &lt;- refine %&gt;% group_by(company) %&gt;% summarise(distinct = n_distinct(company)) %&gt;% select(company) %&gt;% c()</p>
-<p>refine &lt;- refine %&gt;% sub(pattern = “<sup>p\|</sup>f”, replacement = “philips”, x = refine)</p>
-<ul>
-<li><p>Does not work</p>
+<li>rename(companies = company) %&gt;%</li>
+<li><p>attempt at using sub instead of grepl.<br />
+<code>refine &lt;- refine %&gt;% sub(pattern = &quot;^p\|^f&quot;, replacement = &quot;philips&quot;, x = refine)</code></p>
 <pre><code>  sub(pattern = &quot;'ak zo'|akz0|akzo|Akzo|AKZO&quot;, replacement = &quot;akzo&quot;, x = refine) %&gt;% 
   sub(pattern = &quot;'van houten'|'van Houten'|'Van Houten'&quot;, replacement = &quot;van houten&quot;, x = refine) %&gt;% 
-  sub(pattern = &quot;unilever|Unilever|unilver&quot;, replacement = &quot;unilever&quot;, x = refine)</code></pre></li>
+  sub(pattern = &quot;unilever|Unilever|unilver&quot;, replacement = &quot;unilever&quot;, x = refine)  </code></pre></li>
 </ul>
 </div>
+<div id="for-testing" class="section level4">
+<h4>For Testing</h4>
+<p>company_distinct &lt;- refine %&gt;% group_by(company) %&gt;% summarise(distinct = n_distinct(company)) %&gt;% select(company) %&gt;% c()</p>
+</div>
+</div>
+<div id="data-wrangling-exercise-2" class="section level3">
+<h3>Data Wrangling Exercise 2:</h3>
 </div>
 
 
