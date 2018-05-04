@@ -4,19 +4,14 @@ author: "Sitruks"
 date: "May 2, 2018"
 output: html_document
 ---
+library(tidyverse)
 library(readr)
 
-gather_spread_test <- read_csv("Wrangle/gather_spread_test.csv")
 
-gather <- gather_spread_test %>% select(contains("Q23_")) %>% gather(`Q23_Factor_a`, `Q23_Factor_b`, `Q23_Factor_c`, `Q23_Factor_d`, `Q23_Factor_e`, key = "factor", value = "cases")
+vmware <- tbl_df(read_csv("C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware.csv"))
 
+q23 <- vmware %>% select(contains("Q23_")) %>% gather(`Q23_Factor_a`, `Q23_Factor_b`, `Q23_Factor_c`, `Q23_Factor_d`, `Q23_Factor_e`, key = "factor", value = "cases")
 
-gather_summary <- gather %>% group_by(cases, factor) %>% summarise(n = n())
+q23_summary <- q23 %>% group_by(cases, factor) %>% summarise(n = n()) %>% spread(key = cases, value = n) 
 
-* how can I use spread to get the cases column (values 1:5) as column heads, n as values, and factors as rows (5 total)
-
-I've tried 
-gather_summary %>% group_by(cases, factor) %>% summarise(n()) %>% spread(key = cases, value = n)
-
-but i get the error 
-Error: `var` must evaluate to a single number or a column name, not a function
+q23_summary %>% write_csv(q23_summary,"C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware_q23_summary.csv")
