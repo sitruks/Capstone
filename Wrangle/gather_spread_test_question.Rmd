@@ -14,4 +14,10 @@ q23 <- vmware %>% select(contains("Q23_")) %>% gather(`Q23_Factor_a`, `Q23_Facto
 
 q23_summary <- q23 %>% group_by(cases, factor) %>% summarise(n = n()) %>% spread(key = cases, value = n) 
 
-q23_summary %>% write_csv(q23_summary,"C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware_q23_summary.csv")
+write_csv(q23_summary,"C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware_q23_summary.csv")
+
+q24 <- vmware %>% select(contains("Q24_")) %>% gather(`Q24_a`, `Q24_b`, `Q24_c`, `Q24_d`, `Q24_e`, `Q24_f`, `Q24_g`, `Q24_h`, key = "factor", value = "cases")
+
+q24_summary <- q24 %>% group_by(cases, factor) %>% summarise(n = n()) %>% spread(key = cases, value = n) 
+
+write_csv(q24_summary,"C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware_q24_summary.csv")

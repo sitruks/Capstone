@@ -128,10 +128,23 @@ $(document).ready(function () {
 
 <div id="data-wrangling-exercise-1" class="section level3">
 <h3>Data Wrangling Exercise 1:</h3>
-<pre class="refine"><code>library(tidyverse)
-library(forcats)
-refine &lt;- tbl_df(read_csv(&quot;Wrangle/1_Basic_Data_Manipulation/refine_original.csv&quot;))
-refine &lt;- refine %&gt;% 
+<div id="task-0" class="section level4">
+<h4>Task 0</h4>
+<p>Load Data into RStudio</p>
+<pre class="r"><code>refine &lt;- tbl_df(read_csv(&quot;C:/Users/v-kursan/Downloads/Capstone_DS/Wrangle/1_Basic_Data_Manipulation/refine_original.csv&quot;))</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   company = col_character(),
+##   `Product code / number` = col_character(),
+##   address = col_character(),
+##   city = col_character(),
+##   country = col_character(),
+##   name = col_character()
+## )</code></pre>
+</div>
+<div id="tasks-1-5" class="section level4">
+<h4>Tasks 1-5</h4>
+<pre class="r"><code>refine &lt;- refine %&gt;% 
            separate('Product code / number', into = c(&quot;product_code&quot;, &quot;product_number&quot;)) %&gt;% 
            mutate(companies = if_else(grepl(&quot;^p|^P|^f|^F&quot;, company), &quot;philips&quot;,
                   if_else(grepl(&quot;^a|^A&quot;, company), &quot;akzo&quot;,
@@ -154,23 +167,31 @@ refine &lt;- refine %&gt;%
                 product_tablet = if_else(grepl(&quot;q&quot;, product_code), 1, 0)
                   ) %&gt;% 
             select(-company) %&gt;%
-            select(companies, product_category, everything()) %&gt;% 
-            write_csv(refine, &quot;Wrangle/1_Basic_Data_Manipulation/refine_clean.csv&quot;)
-</code></pre>
-<div id="does-not-work" class="section level4">
-<h4>Does not work</h4>
-<ul>
-<li>rename(companies = company) %&gt;%</li>
-<li><p>attempt at using sub instead of grepl.<br />
-<code>refine &lt;- refine %&gt;% sub(pattern = &quot;^p\|^f&quot;, replacement = &quot;philips&quot;, x = refine)</code></p>
-<pre><code>  sub(pattern = &quot;'ak zo'|akz0|akzo|Akzo|AKZO&quot;, replacement = &quot;akzo&quot;, x = refine) %&gt;% 
-  sub(pattern = &quot;'van houten'|'van Houten'|'Van Houten'&quot;, replacement = &quot;van houten&quot;, x = refine) %&gt;% 
-  sub(pattern = &quot;unilever|Unilever|unilver&quot;, replacement = &quot;unilever&quot;, x = refine)  </code></pre></li>
-</ul>
+            select(companies, product_category, everything()) </code></pre>
 </div>
-<div id="for-testing" class="section level4">
-<h4>For Testing</h4>
-<p>company_distinct &lt;- refine %&gt;% group_by(company) %&gt;% summarise(distinct = n_distinct(company)) %&gt;% select(company) %&gt;% c()</p>
+<div id="write" class="section level4">
+<h4>Write</h4>
+<p>```</p>
+</div>
+<div id="task-1" class="section level4">
+<h4>Task 1</h4>
+<p>Clean Up Brand Names</p>
+</div>
+<div id="task-2" class="section level4">
+<h4>Task 2</h4>
+<p>Separate Product Code and Number</p>
+</div>
+<div id="task-3" class="section level4">
+<h4>Task 3</h4>
+<p>Add Product Categories</p>
+</div>
+<div id="task-4" class="section level4">
+<h4>Task 4</h4>
+<p>Add Full Address for Geocoding</p>
+</div>
+<div id="task-5" class="section level4">
+<h4>Task 5</h4>
+<p>Create Dummy Variables for Company and Product Category</p>
 </div>
 </div>
 

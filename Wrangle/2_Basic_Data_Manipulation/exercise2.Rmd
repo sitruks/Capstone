@@ -1,43 +1,68 @@
 ---
 title: "Exercise 2"
-author: "Sitruks"
+author: "Kurtis"
 date: "May 2, 2018"
 output: html_document
 ---
 
-
-### Data Wrangling Exercise 2: 
-  
-titanic <- tbl_df(read_csv("Wrangle/1_Basic_Data_Manipulation/titanic_original.csv"))
-
-
-
-
-
-
-
-
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyverse)
+
 ```
 
-## R Markdown
+### Data Wrangling Exercise 2: 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+#### Task 0
+Load the data in RStudio  
 
-```{r cars}
-summary(cars)
+```{r} 
+df <- tbl_df(read_csv("C:/Users/v-kursan/Downloads/Capstone_DS/Wrangle/2_Basic_Data_Manipulation/titanic_original.csv"))
 ```
 
-## Including Plots
+#### Task 1
+Port of Embarkation
+```{r}
 
-You can also embed plots, for example:
+df <- df %>% replace_na(list(embarked = "S"))
+# check below  
+df %>% group_by(embarked) %>% summarise(n = n())
 
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+#### Task 2
+Age  
+```{r}
+#convert double to integer then find mean
+df <- df %>% mutate(age = as.integer(age))
+#find mean
+df %>% summarise(mean(age, na.rm = TRUE))
+#replace NA's
+df <- df %>% replace_na(list(age = 30))
+#check below
+df %>% group_by(age) %>% summarise(n = n())
+```
+
+#### Task 3
+Lifeboat  
+```{r}
+#replace na first
+df %>% replace_na(list(boat = "None"))
+#distribution
+
+df %>% group_by(boat) %>% summarise(n = n()) %>% spread(boat, n)
+
+```
+
+#### Task 4
+Cabin 
+
+* it makes sense to fill in the missing cabin number values to potentially make summarise functions easier to run. Also to better distinguish what NA means (i.e. missing, unknown, no room)
+* here, it is hard to tell what a missing value means, but i will assume "None"
+
+```{r}
+df %>% mutate(has_cabin_number = if_else(cabin = is.NA), 0, 1)
+
+```

@@ -7,12 +7,25 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+```
+
 ### Data Wrangling Exercise 1:  
 
-```{refine}
-library(tidyverse)
-library(forcats)
-refine <- tbl_df(read_csv("Wrangle/1_Basic_Data_Manipulation/refine_original.csv"))
+#### Task 0
+Load Data into RStudio
+```{r}
+refine <- tbl_df(read_csv("C:/Users/v-kursan/Downloads/Capstone_DS/Wrangle/1_Basic_Data_Manipulation/refine_original.csv"))
+```
+
+
+#### Tasks 1-5
+```{r}
+
 refine <- refine %>% 
            separate('Product code / number', into = c("product_code", "product_number")) %>% 
            mutate(companies = if_else(grepl("^p|^P|^f|^F", company), "philips",
@@ -36,20 +49,42 @@ refine <- refine %>%
                 product_tablet = if_else(grepl("q", product_code), 1, 0)
                   ) %>% 
             select(-company) %>%
-            select(companies, product_category, everything()) %>% 
-            write_csv(refine, "Wrangle/1_Basic_Data_Manipulation/refine_clean.csv")
+            select(companies, product_category, everything()) 
 
 ```
-####Does not work
-* rename(companies = company) %>% 
-* attempt at using sub instead of grepl.  
-`refine <- refine %>% sub(pattern = "^p\|^f", replacement = "philips", x = refine)
- `
 
-          sub(pattern = "'ak zo'|akz0|akzo|Akzo|AKZO", replacement = "akzo", x = refine) %>% 
-          sub(pattern = "'van houten'|'van Houten'|'Van Houten'", replacement = "van houten", x = refine) %>% 
-          sub(pattern = "unilever|Unilever|unilver", replacement = "unilever", x = refine)  
+#### Write
 
-####For Testing
 
-company_distinct <- refine %>% group_by(company) %>% summarise(distinct = n_distinct(company)) %>% select(company) %>% c()
+```
+
+#### Task 1
+Clean Up Brand Names  
+```{r}
+
+```
+
+#### Task 2
+Separate Product Code and Number  
+```{r}
+
+```
+
+#### Task 3
+Add Product Categories  
+```{r}
+
+```
+
+#### Task 4
+Add Full Address for Geocoding  
+```{r}
+
+```
+
+#### Task 5
+Create Dummy Variables for Company and Product Category  
+```{r}
+
+```
+
