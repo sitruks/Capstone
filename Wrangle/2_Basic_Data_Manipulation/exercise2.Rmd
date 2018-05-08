@@ -60,9 +60,10 @@ df %>% group_by(boat) %>% summarise(n = n()) %>% spread(boat, n)
 Cabin 
 
 * it makes sense to fill in the missing cabin number values to potentially make summarise functions easier to run. Also to better distinguish what NA means (i.e. missing, unknown, no room)
-* here, it is hard to tell what a missing value means, but i will assume "None"
+* here, it is hard to tell what a missing value means, but i will assume "None". That said, I left the NA s as is and calculated the column using and if statement
 
 ```{r}
-df %>% mutate(has_cabin_number = if_else(cabin = is.NA), 0, 1)
+
+df %>% mutate(has_cabin_number = if_else(cabin == (na.rm = TRUE), 0, 1))
 
 ```
