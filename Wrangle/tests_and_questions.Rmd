@@ -1,0 +1,58 @@
+---
+title: "VMware_test"
+author: "Sitruks"
+date: "May 2, 2018"
+output: html_document
+---
+library(tidyverse)
+library(readr)
+
+```{r}
+vmware <- tbl_df(read_csv("C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware.csv"))
+
+q23 <- vmware %>% select(contains("Q23_")) %>% gather(`Q23_Factor_a`, `Q23_Factor_b`, `Q23_Factor_c`, `Q23_Factor_d`, `Q23_Factor_e`, key = "factor", value = "cases")
+
+q23_summary <- q23 %>% group_by(cases, factor) %>% summarise(n = n()) %>% spread(key = cases, value = n) 
+
+write_csv(q23_summary,"C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware_q23_summary.csv")
+```
+
+```{r}
+q24 <- vmware %>% select(contains("Q24_")) %>% gather(`Q24_a`, `Q24_b`, `Q24_c`, `Q24_d`, `Q24_e`, `Q24_f`, `Q24_g`, `Q24_h`, key = "factor", value = "cases")
+
+q24_summary <- q24 %>% group_by(cases, factor) %>% summarise(n = n()) %>% spread(key = cases, value = n) 
+
+write_csv(q24_summary,"C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware_q24_summary.csv")
+```
+
+```{r}
+vmware %>% 
+  mutate(q19_cisco = if_else(grepl("Cisco", Q19_CSS_normalized), 1, 0),
+         q19_cyberark = if_else(grepl("Cyberark", Q19_CSS_normalized), 1, 0),
+         q19_mcafee = if_else(grepl("McAfee", Q19_CSS_normalized), 1, 0),
+         q19_paloalto = if_else(grepl("Palo", Q19_CSS_normalized), 1, 0),
+         q19_sophos = if_else(grepl("Sophos", Q19_CSS_normalized), 1, 0),
+         q19_symantec = if_else(grepl("Symantec", Q19_CSS_normalized), 1, 0),
+         q19_vmware = if_else(grepl("VMware", Q19_CSS_normalized), 1, 0),
+         q19_windowsd = if_else(grepl("Windows D", Q19_CSS_normalized), 1, 0),
+         q19_na = if_else(grepl("N/A", Q19_CSS_normalized), 1, 0),
+         q19_other = if_else(grepl("Cisco|Cyberark|McAfee|Palo|Sophos|Symantec|VMware|Windows D|N/A", Q19_CSS_normalized), 0, 1)
+         ) %>% 
+  write_csv("C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware_q19.csv")
+```
+
+```{r}
+vmware %>% 
+  mutate(q20_cisco = if_else(grepl("Cisco", Q20_BestCSS_normalized), 1, 0),
+         q20_cyberark = if_else(grepl("Cyberark", Q20_BestCSS_normalized), 1, 0),
+         q20_mcafee = if_else(grepl("McAfee", Q20_BestCSS_normalized), 1, 0),
+         q20_paloalto = if_else(grepl("Palo", Q20_BestCSS_normalized), 1, 0),
+         q20_sophos = if_else(grepl("Sophos", Q20_BestCSS_normalized), 1, 0),
+         q20_symantec = if_else(grepl("Symantec", Q20_BestCSS_normalized), 1, 0),
+         q20_vmware = if_else(grepl("VMware", Q20_BestCSS_normalized), 1, 0),
+         q20_windowsd = if_else(grepl("Windows D", Q20_BestCSS_normalized), 1, 0),
+         q20_na = if_else(grepl("N/A", Q20_BestCSS_normalized), 1, 0),
+         q20_other = if_else(grepl("Cisco|Cyberark|McAfee|Palo|Sophos|Symantec|VMware|Windows D|N/A", Q20_BestCSS_normalized), 0, 1)
+  ) %>% 
+  write_csv("C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware_q20.csv")
+```
