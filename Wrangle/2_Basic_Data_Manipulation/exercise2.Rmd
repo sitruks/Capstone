@@ -67,3 +67,10 @@ Cabin
 df %>% mutate(has_cabin_number = if_else(cabin == (na.rm = TRUE), 0, 1))
 
 ```
+
+#### Task 5
+Submit to Github
+```{r}
+df %>% write_csv("C:/Users/v-kursan/Downloads/Capstone_DS/Wrangle/2_Basic_Data_Manipulation/titanic_clean.csv")
+
+```
