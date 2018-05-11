@@ -56,3 +56,24 @@ vmware %>%
   ) %>% 
   write_csv("C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware_q20.csv")
 ```
+
+
+```{r}
+#vmware q6 merge to main
+
+vmware <- tbl_df(read_csv("C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware.csv"))
+
+vmware_toMerge <- tbl_df(read_csv("C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware_q6_appended.csv"))
+
+vmware <- vmware_toMerge %>% 
+          select(Num, contains("Q6_Recode_3")) %>% 
+          left_join(vmware, vmware_toMerge, by = "Num") %>% 
+          mutate("Q6_Trusted Brand" = if_else(grepl("Trusted", Q6_Recode_3), 1, 0),
+                  "Q6_Features/Capabilities" = if_else(grepl("Features", Q6_Recode_3), 1, 0),
+                  "Q6_Virtualization" = if_else(grepl("Virtual", Q6_Recode_3), 1, 0),
+                  "Q6_Integration" = if_else(grepl("Integr", Q6_Recode_3), 1, 0),
+                  "Q6_Other" = if_else(grepl("Other", Q6_Recode_3), 1, 0)
+                  ) %>% 
+write_csv("C:/Users/v-kursan/OneDrive - Microsoft/IS_Files/Work and Offers/_Work/Indigo/_Market Research/vmware.csv")
+
+```
