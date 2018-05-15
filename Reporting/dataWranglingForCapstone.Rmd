@@ -7,24 +7,41 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggmap)
+library(naniar)
 ```
 
-## R Markdown
+### Capstone Summary
+Prediction model (win) - school proximity to host site
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+### Capstone Data Sourcing
+Fortunately, since the source of most data comes from [Kaggle](https://www.kaggle.com/) the data required for this project is clean. Much of the data has to be joined together to run the stats models.  
+One bit of information that was not provided was the specific coordinates (latitude and longitude) of home and tournament venues. The venue locations can be found on [Wikipedia](https://en.wikipedia.org/wiki/List_of_NCAA_Men%27s_Division_I_Basketball_Tournament_venues), but the coordinates are still required. To pull coordinates, the **ggmap** package will need to be installed. Ggmap leverages google's API to get this information.   
+This data contains old arena locations (which is redundant for humans but shouldn't affect google) and is missing a column for state data and will require some cleaning to improve google api query accuracy. What is nice about this data set is that it also lists the year and round that was played, which may be very useful for matching. Once cleaned, the geocodes can be pulled and merged with "GameCities.csv". "Teams.csv", which does not require any cleaning, can run ggmap at any time to get the pertinent home venue data.  
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+### Question
+replace with na's [naniar](https://cran.r-project.org/web/packages/naniar/vignettes/replace-with-na.html)  
+* have you ever used this? doe you know of a better way?
 
-```{r cars}
-summary(cars)
+```{r}
+#TourneyVenues data clean
+TourneyVenues <- read_csv("Data/TourneyVenues.csv")
+
+Venues_Clean <- TourneyVenues %>% 
+  mutate(State = if_else(is.na(Arena), City, "NA")) %>% 
+  replace_with_na(list(State = "NA")) %>% 
+  fill(State) %>% 
+  filter(!is.na(Arena)) %>% 
+  unite(City, State, Arena, col = "Address", sep = ", ")
 ```
+#advice for the following
+Venues_Clean %>% mutate_geocode(Address)
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+#optional extra cleaning
+Venues_Clean %>% 
+    separate_rows(`Opening rounds`) %>% 
+    separate_rows(Regionals) %>% 
+    separate_rows(`Final Four`)
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
