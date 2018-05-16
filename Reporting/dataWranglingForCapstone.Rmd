@@ -24,20 +24,20 @@ This data contains old arena locations (which is redundant for humans but should
 
 #### Questions
 For this problem, how would you recommend compiling the data set? 
-* At work, I often work with relational databases. Creating relationships in the data usually alleviates the need to merge all sources.
-    + Can you create relationships in R?
-Help with using mutate_geocode():
-* how can i reduce the errors?
-How to replace/set values as "NA" not just a character named "NA"
+* At work, I often work with relational databases. Creating relationships in the data usually alleviates the need to merge all sources.  
+    + Can you create relationships in R?  
+Help with using mutate_geocode():  
+* how can i reduce the errors  
+How to replace/set values as "NA" not just a character named "NA"  
 * I found the package [naniar](https://cran.r-project.org/web/packages/naniar/vignettes/replace-with-na.html)  
-    + have you ever used this?
-    + do you know of a better way?
+    + have you ever used this?  
+    + do you know of a better way?  
 What is the best path to add new files to github?  
-* directly to github?
-* from Rstudio?
-Is there a "ctrl + z" equivalent you know of in R?
-* The use case would be for after assigning a varible that overwrites your data
-    + i.e. x <- 4 %>% x <- 4345
+* directly to github?  
+* from Rstudio?  
+Is there a "ctrl + z" equivalent you know of in R?  
+* The use case would be for after assigning a varible that overwrites your data  
+    + i.e. x <- 4 %>% x <- 4345  
   
 #### Data Wrangling
 
