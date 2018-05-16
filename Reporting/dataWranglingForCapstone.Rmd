@@ -26,7 +26,7 @@ This data contains old arena locations (which is redundant for humans but should
 #### Questions
 How to replace/set values as "NA" not just a character named "NA"
 * I found the package [naniar](https://cran.r-project.org/web/packages/naniar/vignettes/replace-with-na.html)  
- + have you ever used this? do you know of a better way?
+    + have you ever used this? do you know of a better way?
 What is the best path to add new files to github?  
 * directly to github?
 * from Rstudio?
