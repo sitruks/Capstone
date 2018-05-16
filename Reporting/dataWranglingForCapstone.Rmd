@@ -23,23 +23,23 @@ One bit of information that was not provided was the specific coordinates (latit
 This data contains old arena locations (which is redundant for humans but shouldn't affect google) and is missing a column for state data and will require some cleaning to improve google api query accuracy. What is nice about this data set is that it also lists the year and round that was played, which may be very useful for matching. Once cleaned, the geocodes can be pulled and merged with "GameCities.csv". "Teams.csv", which does not require any cleaning, can run ggmap at any time to get the pertinent home venue data.  
 
 #### Questions
-For this problem, how would you recommend compiling the data set? 
+**For this problem, how would you recommend compiling the data set?**  
 * At work, I often work with relational databases. Creating relationships in the data usually alleviates the need to merge all sources.  
     + Can you create relationships in R?  
   
-Help with using mutate_geocode():  
+**Help with using mutate_geocode():**  
 * how can i reduce the errors  
   
-How to replace/set values as "NA" not just a character named "NA"  
+**How to replace/set values as "NA" not just a character named "NA"**  
 * I found the package [naniar](https://cran.r-project.org/web/packages/naniar/vignettes/replace-with-na.html)  
     + have you ever used this?  
     + do you know of a better way?  
   
-What is the best path to add new files to github?  
+**What is the best path to add new files to github?**  
 * directly to github?  
 * from Rstudio?  
   
-Is there a "ctrl + z" equivalent you know of in R?  
+**Is there a "ctrl + z" equivalent you know of in R?**  
 * The use case would be for after assigning a varible that overwrites your data  
     + i.e. x <- 4 %>% x <- 4345  
   
