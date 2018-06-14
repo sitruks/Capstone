@@ -1,0 +1,94 @@
+---
+title: "Titanic"
+author: "Sitruks"
+date: "June 12, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+librart(reshape2)
+library(ggthemes)
+```
+
+## R Markdown
+```{r}
+titanic_clean <- read_csv("Wrangle/2_Basic_Data_Manipulation/titanic_clean.csv")
+```
+
+###ggplot supporting objects
+```{r}
+
+titanic <- titanic_clean %>% 
+  drop_na(age, pclass) 
+
+titanic$survived <- factor(titanic$survived, labels = c("No", "Yes"))
+
+titanic$pclass <- factor(titanic$pclass, labels = c("First Class", "Standard", "Economy"))
+
+```
+
+###ggplot 1
+```{r}
+
+  pclassFill <- scale_fill_brewer("Class Type", palette = "Reds")
+  val = c("#FFFFFF","#FFFF00")
+
+  ggplot(titanic, aes(x = age, col = survived, fill = factor(pclass))) +
+  geom_histogram(aes(y = ..count../sum(..count..)), binwidth = 1, position = "fill") + 
+  facet_grid(survived ~.) +
+  pclassFill +
+  scale_y_continuous("Proportion") +
+  scale_x_continuous("Age") +
+  scale_colour_manual("Survived",
+                      values = val)
+```
+
+###ggplot 2
+```{r}
+  
+  pclassFill2 <- scale_fill_brewer("Survived", palette = "Reds")
+  val2 = c("#FFFFFF","#FFFF00","#000000")
+  
+  ggplot(titanic, aes(x = age, fill = factor(survived))) +
+  geom_histogram(aes(y = ..count../sum(..count..)), binwidth = 1, position = "fill") + 
+  facet_grid(pclass ~.) +
+  pclassFill2 +
+  scale_y_continuous("Proportion") +
+  scale_x_continuous("Age")
+
+```
+
+###mosaic 1
+
+```{r}
+DF <- as.data.frame.matrix(table(titanic$age, titanic$survived))
+
+DF$groupSum <- rowSums(DF)
+DF$xmax <- cumsum(DF$groupSum)
+DF$xmin <- DF$xmax - DF$groupSum
+DF$groupSum <- NULL
+DF$X <- row.names(DF)
+pclassFill3 <- scale_fill_brewer("Survived", palette = "Reds")
+
+DF_melted <- melt(DF, id.vars = c("X", "xmin", "xmax"), variable.name = "FILL")
+DF_melted <- DF_melted %>%
+  group_by(X) %>%
+  mutate(ymax = cumsum(value/sum(value)),
+         ymin = ymax - value/sum(value))
+
+ggplot(DF_melted, aes(ymin = ymin,
+                 ymax = ymax,
+                 xmin = xmin,
+                 xmax = xmax,
+                 fill = FILL)) +
+  geom_rect(colour = "white") +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
+  pclassFill3 +
+  scale_y_continuous("Proportion") +
+  scale_x_continuous("Age") +
+  theme_tufte()
+
+```
