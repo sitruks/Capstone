@@ -37,7 +37,7 @@ summary(nrg.metro.per)
 ### improves the model, but not very strong to begin with...
 
 #Additional Predictors #2
-nrg.all <- lm(energy ~ metro + percent + pop + area + density + miles + waste + toxic + green + expense + income, data = states.data)
+nrg.all <- lm(energy ~ metro + percent + pop + area + density + miles + waste + toxic + green + expense + income + house + senate + csat + msat + vsat + high + college, data = states.data)
 summary(nrg.all)
 ### improves the model greatly, but not a lot of significant variables
 
