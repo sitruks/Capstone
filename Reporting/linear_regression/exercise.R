@@ -94,7 +94,7 @@ str(states.data$region)
 states.data$region <- factor(states.data$region)
 
 #states.data$region <-C(region, base=4)
-## is there a difference??
+## is there a difference between states.data$region <- factor(states.data$region)
 
 nrg.eco.region <- lm(energy ~ region + metro*percent + toxic + green,
                 data=states.data)
