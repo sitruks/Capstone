@@ -5,3 +5,5 @@ Data/
 .Ruserdata
 Wrangle/3_Basic_Data_Manipulation/test/
 Wrangle/3_Basic_Data_Manipulation/train/
+.httr-oauth
+rmd.auth
