@@ -10,3 +10,10 @@ train = subset(framingham, split == TRUE)
 test = subset(framingham, split == FALSE)
 framinghamLog = glm(TenYearCHD ~ ., data = train, family = binomial)
 # '.' = all other variables
+
+predictTest = predict(framinghamLog, type="response", newdata=test)
+table(test$TenYearCHD, predictTest > 0.5)
+
+library(ROCR)
+ROCRpred = prediction(predictTest, test$TenYearCHD)
+as.numeric(performance(ROCRpred, "auc")@y.values)
