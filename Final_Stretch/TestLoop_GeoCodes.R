@@ -1,11 +1,17 @@
+'''
+This script pulls lat and lon coordinates for all game venues using
+ggmap Google map APIs
+
+Date: 2018/09/11
+'''
+
 library(tidyverse)
 library(ggmap)
 library(naniar)
+options(max.print = 1000000)
 
 #TourneyVenues data clean
 TourneyVenues <- read_csv("Data/TourneyVenues.csv")
-
-options(max.print = 1000000)
 
 Venues_Clean <- TourneyVenues %>% 
   mutate(State = if_else(is.na(Arena), City, "NA")) %>% 
@@ -13,21 +19,49 @@ Venues_Clean <- TourneyVenues %>%
   fill(State) %>% 
   filter(!is.na(Arena)) %>% 
   unite(City, State, Arena, col = "Address", sep = ", ")
-#idea to call enough times to cover the NAs
-# if there is a way to slow down the api call maybe it will process better/not get NAs
-Venues_Lat_Long <- Venues_Clean %>% mutate_geocode(Address)
-Venues_Lat_Long2 <- Venues_Clean %>% mutate_geocode(Address)
 
-#If this worked, i would join all instances
-Venues_Join <- inner_join(Venues_Lat_Long,Venues_Lat_Long2)
-Venues_NA <- filter(Venues_Join, is.na(lon)) %>% mutate_geocode(Address)
-Venues_NA2 <- filter(Venues_Join, is.na(lon)) %>% mutate_geocode(Address)
+#Initiate two vectors intially filled with NAs as placeholders for lat and lon
+lat_arr <- rep(NA,length(Venues_Clean$Address))
+lon_arr <- rep(NA,length(Venues_Clean$Address))
 
-#continuation of this
-Venues_Join2 <- inner_join(Venues_Join, Venues_NA)
-Venues_Join3 <- inner_join(Venues_Join2, Venues_NA2)
+#Start the looping in postion 1
+i = 1
 
-#the while loop with empty containers i think is the way to go.
+#The following while loop executes as long as there are still
+# NA values in the lat or lon array
+while (sum(is.na(lat_arr)) > 0 & sum(is.na(lon_arr)) > 0)
+{
+  
+  # Check if at the current ith position, if we still got an NA value for the lat/lon
+  # if yes, let's get the venue address, feed into the geocode() function to attempt
+  # again to get the lat and lon
+  if (is.na(lat_arr[i])){
+    print (i)
+    address <- Venues_Clean$Address[i]
+    latlon <- geocode(address)
+    lat_arr[i] <- latlon[[1]]
+    lon_arr[i] <- latlon[[2]]
+  }
+  
+  # Otherwise, the lat/lon has been pulled sccuessfully for ith position
+  # therefore, we move on to the next position by increasing i by 1
+  i <- i + 1
+  
+  # If we reached to the end of the array, let's restart back from position 1
+  # it takes about 3 completed cycles to get all the locations coordiated pulled up
+  if (i > length(Venues_Clean$Address)){
+    
+    i <- 1
+  }
+  
+}
+
+# Add the lat and lon arrays to the dataframe as new columns
+Venues_Clean$Lat <- lat_arr
+Venues_Clean$Lon <- lon_arr
+
+write.csv(Venues_Clean,'Data/Venues_Clean_w_Coords.csv')
+
 
 #optional extra cleaning
 Venues_Clean %>% 
