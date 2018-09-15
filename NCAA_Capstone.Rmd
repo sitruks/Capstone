@@ -67,12 +67,9 @@ head(seas_detail_res,n=5)
 
 ```
 
-## Prepare Target Label
-We train a model to predict tournment win/lose
-and randomize the winner and loser team into team 1 and 2 and we calculate the probability of team 1 wins.
-
-
-We randomize winning and losing team into team 1 and team 2 (necessary for probabilities later) and drop other ids
+## Data Preparing for Modeling
+We are interested to train a model to predict tournment win/lose
+and randomize the winner and loser team into team 1 and 2 and we calculate the probability of team 1 wins.  We randomize winning and losing team into team 1 and team 2 (necessary for probabilities later) and drop other ids
 ```{r}
 rand_tourn_res <- tour_compact_res %>% select(Season,DayNum,WTeamID,LTeamID) %>% mutate(rand = runif(dim(tour_compact_res)[1]), 
          team1id = ifelse(rand >= 0.5, WTeamID, LTeamID),
@@ -80,24 +77,27 @@ rand_tourn_res <- tour_compact_res %>% select(Season,DayNum,WTeamID,LTeamID) %>%
          team1win = ifelse(team1id == WTeamID, 1, 0)) %>% 
   select(-rand, -WTeamID,-LTeamID)
 
+```
+Then we add seeding information to games as seeding can be an important predictor
+```{r}
 
+# We remove letters from seeds variable and only retain numeric values
 seeds_tournment <- seeds %>% mutate(ranking = as.factor((str_replace(Seed, "[A-Z]",""))), 
          rank_num = as.numeric(str_replace(ranking, ".[a-z]","")))
 
-```
-Add seeding information to games as seeding can be an important predictor
-```{r}
-
+# Join seeds with the tournament results table by teamid and season for team1
 rand_tourn_res <- rand_tourn_res %>% 
   left_join(
     select(seeds_tournment, t1_rank = ranking, t1_rank_n = rank_num, TeamID, Season), 
     by = c("team1id"="TeamID","Season"="Season")) 
 
+# Join seeds with the tournament results table by teamid and season for team2
 rand_tourn_res <- rand_tourn_res %>% 
   left_join(
     select(seeds_tournment, t2_rank = ranking, t2_rank_n = rank_num, TeamID, Season), 
     by = c("team2id"="TeamID","Season"="Season")) 
 
+# There are some team has 'NA' seeds and we replac the 'NA' with the average seeds number 8
 rand_tourn_res <- rand_tourn_res %>% mutate(t1_rank = ifelse(is.na(t1_rank), 8, t1_rank),
                                                     t2_rank = ifelse(is.na(t2_rank), 8, t2_rank),
                                                     t1_rank_n = ifelse(is.na(t1_rank_n), 8, t1_rank_n),
@@ -106,60 +106,91 @@ rand_tourn_res <- rand_tourn_res %>% mutate(t1_rank = ifelse(is.na(t1_rank), 8, 
 
 
 ```
-
-Let’s now turn to the regular season game statistics. We are interested in knowing how certain statistics correlate with winning vs losing.
+Besides seeding information, we are also interested in knowing how certain regular season statistics correlate with winning vs losing.We take the regular season detail and stack it vertically with only 1 column of TeamIDs and a factor indicating whether that row corresponds to a win or a loss.
 
 ```{r}
+# Select winning teams variables from seasons detailed result table
 win_predictors <- seas_detail_res %>% select(Season,starts_with("W"))
+# Create a variable called Res to store the game result, for winning team, the value is 1
 win_predictors$Res = 1
+# Remove the 'W' initial letter from the column names
 names(win_predictors) = substring(names(win_predictors),2)
+# Remove Loc variable from the predictors, since Loc variable is only available for winning team,
+# and if we stack without removing this var with losing team stats, it generated error of unmatched #dimnesion
 win_predictors <- win_predictors%>% select(-Loc)
+
+# Select losing teams variables from seasons detailed result table
 lose_predictors <- seas_detail_res %>% select(Season,starts_with("L"))
+# Create a variable called Res to store the game result, for losing team, the value is 0
 lose_predictors$Res = 0
+# Remove the 'L' initial letter from the column names
 names(lose_predictors) = substring(names(lose_predictors),2)
+
+# Stack using row binding function winning and losing stats
 predictors_all <- rbindlist(list(win_predictors, lose_predictors))
+# Correct names for columns Season and Res
 predictors_all <- predictors_all %>% rename(Season = eason, Res = es)
+#Here we also add some additional game statistcs. These include field goal percentage, free throw percentage.
 predictors_all <- predictors_all %>% mutate(FGP = FGM/FGA,FGP2 = (FGM - FGM3) / (FGA - FGA3),FGP3 = FGM3 / FGA3,FTP = FTM / FTA)
+
+# Make Res column a binary category var, 'W' stands for winning, 'L' stands for losing
 predictors_all <- predictors_all%>%mutate(Res = factor(ifelse(Res == 1, 'W','L')))
+# Create Outcome column still representing game outcome with 1/0 numeric value
 predictors_all <- predictors_all%>%mutate(Outcome = ifelse(Res == 'W', 1,0))
 
 ```
-
-Create mean stats for each season, each team
-```{r}
+Create mean stats for each season, each team using group by and summarise_all function
+```{r message=FALSE, warning=FALSE}
 mean_predictors <- predictors_all %>% group_by(Season,TeamID) %>% summarise_all(funs(mean))
 ```
-Join with the tournament results dataframe
-
+Join the mean stats with the tournament results dataframe, and the constructed model_df is our
+main dataframe which will be used in model building, note that now that we haven't added the
+game venue to each team's home stadium distance variable --TODO
 ```{r}
+
+# Join the team1 stats
 model_df <- rand_tourn_res %>%  inner_join(
     mean_predictors,
     by = c("team1id"="TeamID","Season"="Season")) 
 
+# Join the team2 stats
 model_df <- model_df %>%  inner_join(
     mean_predictors,
     by = c("team2id"="TeamID","Season"="Season")) 
 
+# Rename the stats columns with extension _t1 and _t2 to stand for team1 and team2's stats
 names(model_df) <- gsub('.x','_t1',names(model_df))
 names(model_df) <- gsub('.y','_t2',names(model_df))
 
 ```
 
-## Cross validation Model
+## Cross validation Modeling
+We use 10-fold cross validation to select and build regularized logistic models with glmnet function. There are two types of common regularized logstic models: Lasso and Ridge. A hybrid of the two regularized logstic model is elastincnet model whose mixture level can be controlled with Alpha pamameter. The other parameter is Lambda which is the coefficent to the penalty added to the model loss function. More details of glmnet use can be found at: https://www.rdocumentation.org/packages/glmnet/versions/2.0-16/topics/glmnet
 
-``` {r}
-
-model_df <- model_df[!is.na(model_df$team1win),]
+```{r}
+# Fill NA values with 0, the glmnet function doesn't handle with NA values, so it is critical
+# to remove or fill NA values
 model_df[is.na(model_df)] <- 0 
 
+# Since we are predicting  classificationm, we use a 2 level factor as the outcome column.
+model_df$team1win <- as.factor(model_df$team1win)
+
+# We split 80% of the data into training, and 20% for testing
 y <- model_df[,"team1win"]
-X <- model_df[,-c(1:5)]
 train_set <- createDataPartition(y, p = 0.8, list = FALSE)
 data_train <- model_df[train_set, ]
 data_test <- model_df[-train_set, ]
+
+# We define several alpha and lamda hyperparameter valeus to be cross validated evaluated
 glmnet_grid <- expand.grid(alpha = c(0,  .1,  .2, .4, .6, .8, 1),
                            lambda = seq(.01, .2, length = 20))
+# CV 10 fold
 glmnet_ctrl <- trainControl(method = "cv", number = 10)
+
+# Fit the model using the hyperparameter candidates and cv.
+# Notice that we removed some variables from the predictors 
+# 'Season','D_t2Num','team1id','team2id' are removed since they don't have predictive powers
+# 'diff_rank','FTM_t1','FTM_t2','Res_t2','Res_t1' are removed because they can be linearlly inferred #more or less with other predictors, this is called mulicollinearity which must be removed in any #linear based model
 glmnet_fit <- train(team1win ~ ., data = data_train%>%select(-c('Season','D_t2Num','team1id','team2id','diff_rank','FTM_t1','FTM_t2','Res_t2','Res_t1')),
                     method = "glmnet",
                     preProcess = c("center", "scale"),
@@ -168,28 +199,53 @@ glmnet_fit <- train(team1win ~ ., data = data_train%>%select(-c('Season','D_t2Nu
 
 
 glmnet_fit
+```
 
+Plot how the model accuracy changes with the mixing percentage(alpha parameter) and regularization parameter(lambda parameter)
+```{r}
 plot(glmnet_fit, xvar = "dev", label = TRUE,scales = list(x = list(log = 2)))
+```
+We wanted to see the coefficients of the predictors of the best model, and in our cross validation
+experiments, there are two sets of hyperarameter sets got us the best the accuracy, and thus we have two equivalent best models, two sets of coefficients as below shows
 
+```{r warning=FALSE}
 # Best model parameters:
 best_param <- glmnet_fit$results %>% filter(glmnet_fit$results$Accuracy ==max(glmnet_fit$results$Accuracy)) 
 
 best_fit <- glmnet(as.matrix(data_train%>%select(-c('Season','D_t2Num','team1win','team1id','team2id','diff_rank','FTM_t1','FTM_t2','Res_t2','Res_t1'))),data_train$team1win,lambda = best_param$lambda, alpha =  best_param$alpha,family="binomial")
+# Coeffcients
 coef(best_fit)
+```
+Besides glmnet, cv.glment is also a commonly used logistic function to build models automatically using cross validation. For logistic regression, cv.glmnet has similar arguments and usage as Gaussian. nfolds, weights, lambda, parallel are all available to users. 
 
-cvfit <- cv.glmnet(preds,label,family="binomial", type.measure = "class")
+The following model uses misclassification error as the criterion for 10-fold cross-validation, and then we plot the object and show the optimal values of λ
+.
+```{r}
+cvfit <- cv.glmnet(as.matrix(data_train%>%select(-c('Season','D_t2Num','team1win','team1id','team2id','diff_rank','FTM_t1','FTM_t2','Res_t2','Res_t1'))),data_train$team1win,family="binomial", type.measure = "class")
 plot(cvfit)
-
+```
 
 ## Model evaluation	
- 
+
+Make predictions on the held test data set and produces the probability of team1winnin prediction
+```{r} 
 pred_prob <- predict(glmnet_fit, newdata = data_test, type = 'prob')
-optCutOff <- optimalCutoff(data_test$team1win, pred_prob[2])[1] #0.4828061
+
+```
+Decide on optimal prediction probability cutoff for the model. The default cutoff prediction probability score is 0.5 or the ratio of 1’s and 0’s in the training data. But sometimes, tuning the probability cutoff can improve the accuracy in both the development and validation samples. The InformationValue::optimalCutoff function provides ways to find the optimal cutoff to improve the prediction of 1’s, 0’s, both 1’s and 0’s and o reduce the misclassification error. Lets compute the optimal score that minimizes the misclassification error for the above model.
+```{r}
+optCutOff <- optimalCutoff(data_test$team1win, pred_prob[2])[1] #0.4785712
+```
+A confusion matrix is a table that is often used to describe the performance of a classification model (or "classifier") on a set of test data for which the true values are known.
+```{r}
 confusionMatrix(data_test$team1win, pred_prob[2],threshold = optCutOff)
+```
+
+ROC
+
+Receiver Operating Characteristics Curve traces the percentage of true positives accurately predicted by a given logit model as the prediction probability cutoff is lowered from 1 to 0. For a good model, as the cutoff is lowered, it should mark more of actual 1’s as positives and lesser of actual 0’s as 1’s. So for a good model, the curve should rise steeply, indicating that the TPR (Y-Axis) increases faster than the FPR (X-Axis) as the cutoff score decreases. Greater the area under the ROC curve, better the predictive ability of the model.
+```{r}
 plotROC(data_test$team1win, pred_prob[2])
-
-
-
 
 ```
 
