@@ -176,7 +176,24 @@ names(model_df) <- gsub('.y','_t2',names(model_df))
 ```
 ```{r}
 ggscatmat(predictors_all,columns = 3:5,color = 'Res')
-
+```
+```{r}
+ggscatmat(predictors_all,columns = 6:8,color = 'Res')
+```
+```{r}
+ggscatmat(predictors_all,columns = 9:10,color = 'Res')
+```
+```{r}
+ggscatmat(predictors_all,columns = 11:13,color = 'Res')
+```
+```{r}
+ggscatmat(predictors_all,columns = 14:16,color = 'Res')
+```
+```{r}
+ggscatmat(predictors_all,columns = 17:19,color = 'Res')
+```
+```{r}
+ggscatmat(predictors_all,columns = 20:21,color = 'Res')
 ```
 
 
