@@ -19,6 +19,8 @@ library(ggplot2)
 library(gridExtra)
 library(ggExtra)
 library(GGally)
+library(caret)
+library(glmnet)
 ```
 ## Get data
 
@@ -148,35 +150,44 @@ names(model_df) <- gsub('.y','_t2',names(model_df))
 ``` {r}
 
 model_df <- model_df[!is.na(model_df$team1win),]
+model_df[is.na(model_df)] <- 0 
 
 y <- model_df[,"team1win"]
 X <- model_df[,-c(1:5)]
-# train_set <- createDataPartition(y, p = 0.8, list = FALSE)
-# 
-# train_X <- X[train_set, ]
-# train_y <- y[train_set]
-# test_X <- X[-train_set, ]
-# test_y <- y[-train_set]
-#  
-# set.seed(seed)
-# cv_splits <- createFolds(y, k = 10, returnTrain = TRUE)
-
- 	
-library(caret)
-library(glmnet)
+train_set <- createDataPartition(y, p = 0.8, list = FALSE)
+data_train <- model_df[train_set, ]
+data_test <- model_df[-train_set, ]
 glmnet_grid <- expand.grid(alpha = c(0,  .1,  .2, .4, .6, .8, 1),
                            lambda = seq(.01, .2, length = 20))
 glmnet_ctrl <- trainControl(method = "cv", number = 10)
-glmnet_fit <- train(team1win ~ ., data = model_df%>%select(-c('Season','D_t2Num','team1id','team2id','Res_t2','Res_t1')),
+glmnet_fit <- train(team1win ~ ., data = data_train%>%select(-c('Season','D_t2Num','team1id','team2id','diff_rank','FTM_t1','FTM_t2','Res_t2','Res_t1')),
                     method = "glmnet",
                     preProcess = c("center", "scale"),
                     tuneGrid = glmnet_grid,
-                    trControl = glmnet_ctrl)
+                    trControl = glmnet_ctrl,family = 'binomial')
+
+
 glmnet_fit
 
-## Simple logistic regression
-model <- glm(team1win ~ ., data = model_df%>%select(-c('Season','D_t2Num','team1id','team2id','Res_t2','Res_t1')), family = binomial)
-summary(model)
+plot(glmnet_fit, xvar = "dev", label = TRUE,scales = list(x = list(log = 2)))
+
+# Best model parameters:
+best_param <- glmnet_fit$results %>% filter(glmnet_fit$results$Accuracy ==max(glmnet_fit$results$Accuracy)) 
+
+best_fit <- glmnet(as.matrix(data_train%>%select(-c('Season','D_t2Num','team1win','team1id','team2id','diff_rank','FTM_t1','FTM_t2','Res_t2','Res_t1'))),data_train$team1win,lambda = best_param$lambda, alpha =  best_param$alpha,family="binomial")
+coef(best_fit)
+
+cvfit <- cv.glmnet(preds,label,family="binomial", type.measure = "class")
+plot(cvfit)
+
+
+## Model evaluation	
+ 
+pred_prob <- predict(glmnet_fit, newdata = data_test, type = 'prob')
+optCutOff <- optimalCutoff(data_test$team1win, pred_prob[2])[1] #0.4828061
+confusionMatrix(data_test$team1win, pred_prob[2],threshold = optCutOff)
+plotROC(data_test$team1win, pred_prob[2])
+
 
 
 
