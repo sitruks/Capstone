@@ -147,6 +147,8 @@ names(model_df) <- gsub('.y','_t2',names(model_df))
 
 ``` {r}
 
+model_df <- model_df[!is.na(model_df$team1win),]
+
 y <- model_df[,"team1win"]
 X <- model_df[,-c(1:5)]
 # train_set <- createDataPartition(y, p = 0.8, list = FALSE)
@@ -165,12 +167,18 @@ library(glmnet)
 glmnet_grid <- expand.grid(alpha = c(0,  .1,  .2, .4, .6, .8, 1),
                            lambda = seq(.01, .2, length = 20))
 glmnet_ctrl <- trainControl(method = "cv", number = 10)
-glmnet_fit <- train(y ~ ., data = X,
+glmnet_fit <- train(team1win ~ ., data = model_df%>%select(-c('Season','D_t2Num','team1id','team2id','Res_t2','Res_t1')),
                     method = "glmnet",
                     preProcess = c("center", "scale"),
                     tuneGrid = glmnet_grid,
                     trControl = glmnet_ctrl)
 glmnet_fit
+
+## Simple logistic regression
+model <- glm(team1win ~ ., data = model_df%>%select(-c('Season','D_t2Num','team1id','team2id','Res_t2','Res_t1')), family = binomial)
+summary(model)
+
+
 
 ```
 
