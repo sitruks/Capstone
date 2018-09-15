@@ -21,6 +21,7 @@ library(ggExtra)
 library(GGally)
 library(caret)
 library(glmnet)
+library(geosphere)
 ```
 ## Get data
 
@@ -48,6 +49,8 @@ seas_detail_res <- read.csv("Data/RegularSeasonDetailedResults.csv")
 
 ```
 ## Data Exploration
+
+View each table to understand the variables
 
 ```{r}
 head(teams,n=5)
@@ -103,9 +106,6 @@ rand_tourn_res <- rand_tourn_res %>% mutate(t1_rank = ifelse(is.na(t1_rank), 8, 
 
 
 ```
-
-
-
 
 Let’s now turn to the regular season game statistics. We are interested in knowing how certain statistics correlate with winning vs losing.
 
@@ -196,7 +196,7 @@ plotROC(data_test$team1win, pred_prob[2])
 ## Compute distance bewteen game location to each team's home venue
 skip for now, need to know how the home venue location was generated for each team
 ```{r}
-library(geosphere)
+
 #distm(c(lon1, lat1), c(lon2, lat2), fun = distHaversine)
 
 ```
@@ -204,11 +204,13 @@ library(geosphere)
 ## Visualization plots
 ```{r}
 
-g1 <- predictors_all %>%
-    ggplot(aes(x = FGP, fill = Res)) +
-    geom_density(alpha = 0.7) +
-    scale_fill_manual(values = c('darkblue', 'grey')) + 
-    labs(x = 'Field goal %', y = '', title = 'Field Goal Shooting')
+# g1 <- predictors_all %>%
+#     ggplot(aes(x = FGP, fill = Res)) +
+#     geom_density(alpha = 0.7) +
+#     scale_fill_manual(values = c('darkblue', 'grey')) + 
+#     labs(x = 'Field goal %', y = '', title = 'Field Goal Shooting')
+
+ggscatmat(predictors_all,columns = 3:5,color = 'Res')
 
 # Correlation plot
 cor <- round(cor(predictors_all),1)
@@ -294,8 +296,3 @@ ggplot(conf_analysis, aes(x=`Description`, y=wins, label=wins)) +
   coord_flip()
 
 ```
-## Including Plots
-
-
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
