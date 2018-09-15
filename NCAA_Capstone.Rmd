@@ -22,6 +22,7 @@ library(GGally)
 library(caret)
 library(glmnet)
 library(geosphere)
+library(InformationValue)
 ```
 ## Get data
 
@@ -67,6 +68,101 @@ head(seas_detail_res,n=5)
 
 ```
 
+## Visualization plots
+```{r}
+
+# g1 <- predictors_all %>%
+#     ggplot(aes(x = FGP, fill = Res)) +
+#     geom_density(alpha = 0.7) +
+#     scale_fill_manual(values = c('darkblue', 'grey')) + 
+#     labs(x = 'Field goal %', y = '', title = 'Field Goal Shooting')
+
+# ggscatmat(predictors_all,columns = 3:5,color = 'Res')
+# 
+# # Correlation plot
+# cor <- round(cor(predictors_all),1)
+# library(ggcorrplot)
+# ggcorrplot(corr, hc.order = TRUE, 
+#            type = "lower", 
+#            lab = TRUE, 
+#            lab_size = 3, 
+#            method="circle", 
+#            colors = c("tomato2", "white", "springgreen3"), 
+#            title="Correlogram of mtcars", 
+#            ggtheme=theme_bw)
+# 
+# # Scatter plot
+# theme_set(theme_bw())
+# g <- ggplot(predictors_all, aes(Outcome, FGP)) + 
+#   geom_count() + 
+#   geom_smooth(method="lm", se=F)
+# 
+# ggMarginal(g, type = "histogram", fill="transparent")
+# ggMarginal(g, type = "boxplot", fill="transparent")
+# 
+# 
+# # Bars
+# teams <- data.table(teams)
+# seeds <- data.table(seeds)
+# seas_compact_res <- data.table(seas_compact_res)
+# tour_compact_res <- data.table(tour_compact_res)
+# 
+# setkey(teams, TeamID)
+# setkey(seeds, TeamID)
+# 
+# 
+# g1 <-
+#     teams[seeds][, one_seed := as.numeric(substr(Seed, 2, 3)) == 1][, sum(one_seed), by = TeamName][order(V1, decreasing = T)][1:30,] %>%
+#     ggplot(aes(x = reorder(TeamName, V1), y = V1,label = V1)) + geom_text(color="white", size=2) +
+#     geom_point(stat = 'identity', fill = 'darkblue',size = 4) + geom_segment(aes(y=0,x = reorder(TeamName, V1), yend = V1,xend =reorder(TeamName, V1) ),color = 'black') +
+#     labs(x = '', y = 'No 1 seeds', title = 'No. 1 Seeds since 1985') +
+#     coord_flip()
+# 
+# setkey(seas_compact_res,WTeamID)
+# g2 <-
+#     seas_compact_res[teams][, .(wins = .N), by = TeamName][order(-wins)][1:30,] %>%
+#     ggplot(aes(x = reorder(TeamName, wins), y = wins,label = wins)) + geom_text(color="white", size=2) +
+#     geom_point(stat = 'identity', fill = 'darkblue',size = 4) + geom_segment(aes(y=0,x = reorder(TeamName,wins), yend = wins,xend =reorder(TeamName, wins) ),color = 'black') +
+#     labs(x = '', y = 'Wins', title = 'Regular Season Wins since 1985') +
+#     coord_flip()
+# 
+# setkey(tour_compact_res, WTeamID)
+# 
+# g3 <-
+#     tour_compact_res[teams][, .(wins = .N), by = TeamName][order(-wins)][1:30,] %>%
+#     ggplot(aes(x = reorder(TeamName, wins), y = wins,label = wins)) + geom_text(color="white", size=2) +
+#     geom_point(stat = 'identity', fill = 'darkblue',size = 4) + geom_segment(aes(y=0,x = reorder(TeamName,wins), yend = wins,xend =reorder(TeamName, wins) ),color = 'black') +
+#     labs(x = '', y = 'Wins', title = 'Tournament Wins since 1985') +
+#     coord_flip()
+# 
+# g4 <-
+#     tour_compact_res[teams][DayNum == 154, .(wins = .N), by = TeamName][order(-wins)][0:30,] %>%
+#     ggplot(aes(x = reorder(TeamName, wins), y = wins,label = wins)) + geom_text(color="white", size=2)+ geom_point(stat = 'identity', fill = 'darkblue',size = 4) +
+#     geom_segment(aes(y=0,x = reorder(TeamName,wins), yend = wins,xend =reorder(TeamName, wins) ),color = 'black') +
+#     labs(x = '', y = 'Championships', title = 'Tournament Championships since 1985') +
+#     coord_flip()
+# 
+# 
+# ## Conferences analysis
+# conf_analysis <- tour_compact_res[team_conferences, on = c(WTeamID = 'TeamID', 'Season'), nomatch = 0
+#              ][DayNum == 154, .(ConfAbbrev, wins = .N), by = ConfAbbrev
+#                ][conferences, on = 'ConfAbbrev', nomatch = 0] 
+# conf_analysis$overall_type <- ifelse(conf_analysis$wins < 4, "below", "above")
+# conf_analysis <- conf_analysis[order(conf_analysis$wins),]
+# conf_analysis$`Description` <- factor(conf_analysis$`Description`, levels = conf_analysis$`Description`)
+# 
+# ggplot(conf_analysis, aes(x=`Description`, y=wins, label=wins)) + 
+#   geom_point(stat='identity', aes(col=overall_type), size=6)  +
+#   scale_color_manual(name="Champion wins", 
+#                      labels = c("Above Average", "Below Average"), 
+#                      values = c("above"="#00ba38", "below"="#f8766d")) + 
+#   geom_text(color="white", size=2) +
+#   labs(title="Diverging Dot Plot", 
+#        subtitle="Champion Wins by Conferences") + 
+#   ylim(0, 12) +
+#   coord_flip()
+
+```
 ## Data Preparing for Modeling
 We are interested to train a model to predict tournment win/lose
 and randomize the winner and loser team into team 1 and 2 and we calculate the probability of team 1 wins.  We randomize winning and losing team into team 1 and team 2 (necessary for probabilities later) and drop other ids
@@ -257,98 +353,3 @@ skip for now, need to know how the home venue location was generated for each te
 
 ```
 
-## Visualization plots
-```{r}
-
-# g1 <- predictors_all %>%
-#     ggplot(aes(x = FGP, fill = Res)) +
-#     geom_density(alpha = 0.7) +
-#     scale_fill_manual(values = c('darkblue', 'grey')) + 
-#     labs(x = 'Field goal %', y = '', title = 'Field Goal Shooting')
-
-ggscatmat(predictors_all,columns = 3:5,color = 'Res')
-
-# Correlation plot
-cor <- round(cor(predictors_all),1)
-library(ggcorrplot)
-ggcorrplot(corr, hc.order = TRUE, 
-           type = "lower", 
-           lab = TRUE, 
-           lab_size = 3, 
-           method="circle", 
-           colors = c("tomato2", "white", "springgreen3"), 
-           title="Correlogram of mtcars", 
-           ggtheme=theme_bw)
-
-# Scatter plot
-theme_set(theme_bw())
-g <- ggplot(predictors_all, aes(Outcome, FGP)) + 
-  geom_count() + 
-  geom_smooth(method="lm", se=F)
-
-ggMarginal(g, type = "histogram", fill="transparent")
-ggMarginal(g, type = "boxplot", fill="transparent")
-
-
-# Bars
-teams <- data.table(teams)
-seeds <- data.table(seeds)
-seas_compact_res <- data.table(seas_compact_res)
-tour_compact_res <- data.table(tour_compact_res)
-
-setkey(teams, TeamID)
-setkey(seeds, TeamID)
-
-
-g1 <-
-    teams[seeds][, one_seed := as.numeric(substr(Seed, 2, 3)) == 1][, sum(one_seed), by = TeamName][order(V1, decreasing = T)][1:30,] %>%
-    ggplot(aes(x = reorder(TeamName, V1), y = V1,label = V1)) + geom_text(color="white", size=2) +
-    geom_point(stat = 'identity', fill = 'darkblue',size = 4) + geom_segment(aes(y=0,x = reorder(TeamName, V1), yend = V1,xend =reorder(TeamName, V1) ),color = 'black') +
-    labs(x = '', y = 'No 1 seeds', title = 'No. 1 Seeds since 1985') +
-    coord_flip()
-
-setkey(seas_compact_res,WTeamID)
-g2 <-
-    seas_compact_res[teams][, .(wins = .N), by = TeamName][order(-wins)][1:30,] %>%
-    ggplot(aes(x = reorder(TeamName, wins), y = wins,label = wins)) + geom_text(color="white", size=2) +
-    geom_point(stat = 'identity', fill = 'darkblue',size = 4) + geom_segment(aes(y=0,x = reorder(TeamName,wins), yend = wins,xend =reorder(TeamName, wins) ),color = 'black') +
-    labs(x = '', y = 'Wins', title = 'Regular Season Wins since 1985') +
-    coord_flip()
-
-setkey(tour_compact_res, WTeamID)
-
-g3 <-
-    tour_compact_res[teams][, .(wins = .N), by = TeamName][order(-wins)][1:30,] %>%
-    ggplot(aes(x = reorder(TeamName, wins), y = wins,label = wins)) + geom_text(color="white", size=2) +
-    geom_point(stat = 'identity', fill = 'darkblue',size = 4) + geom_segment(aes(y=0,x = reorder(TeamName,wins), yend = wins,xend =reorder(TeamName, wins) ),color = 'black') +
-    labs(x = '', y = 'Wins', title = 'Tournament Wins since 1985') +
-    coord_flip()
-
-g4 <-
-    tour_compact_res[teams][DayNum == 154, .(wins = .N), by = TeamName][order(-wins)][0:30,] %>%
-    ggplot(aes(x = reorder(TeamName, wins), y = wins,label = wins)) + geom_text(color="white", size=2)+ geom_point(stat = 'identity', fill = 'darkblue',size = 4) +
-    geom_segment(aes(y=0,x = reorder(TeamName,wins), yend = wins,xend =reorder(TeamName, wins) ),color = 'black') +
-    labs(x = '', y = 'Championships', title = 'Tournament Championships since 1985') +
-    coord_flip()
-
-
-## Conferences analysis
-conf_analysis <- tour_compact_res[team_conferences, on = c(WTeamID = 'TeamID', 'Season'), nomatch = 0
-             ][DayNum == 154, .(ConfAbbrev, wins = .N), by = ConfAbbrev
-               ][conferences, on = 'ConfAbbrev', nomatch = 0] 
-conf_analysis$overall_type <- ifelse(conf_analysis$wins < 4, "below", "above")
-conf_analysis <- conf_analysis[order(conf_analysis$wins),]
-conf_analysis$`Description` <- factor(conf_analysis$`Description`, levels = conf_analysis$`Description`)
-
-ggplot(conf_analysis, aes(x=`Description`, y=wins, label=wins)) + 
-  geom_point(stat='identity', aes(col=overall_type), size=6)  +
-  scale_color_manual(name="Champion wins", 
-                     labels = c("Above Average", "Below Average"), 
-                     values = c("above"="#00ba38", "below"="#f8766d")) + 
-  geom_text(color="white", size=2) +
-  labs(title="Diverging Dot Plot", 
-       subtitle="Champion Wins by Conferences") + 
-  ylim(0, 12) +
-  coord_flip()
-
-```
