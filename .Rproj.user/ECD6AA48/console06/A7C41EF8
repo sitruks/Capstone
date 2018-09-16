@@ -601,4 +601,50 @@ Aborting[0K
 [0K[?25h[?25l
 [0;32msanti@BRICK [0;35m [0;33m~/Documents/Downloads/Capstone[0;36m (Capstone_Dev_KS)[0m[0K
 $[0K[3G[?25h[?25l$ ^V[0K[?25h[?25l$[0K[3G[?25h[?25l$ git add --all[0K[?25h[?25l
-[0K[?25h
+[0K[?25hwarning: LF will be replaced by CRLF in .Rhistory.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/pcs/files-pane.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/pcs/source-pane.pper.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/pcs/windowlayoutstate.pper[0K.[1G[?25h[?25l
+[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/pcs/workbench-pane.pper.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/ECD6AA48/rmd-outputs.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25l
+[0;32msanti@BRICK [0;35m [0;33m~/Documents/Downloads/Capstone[0;36m (Capstone_Dev_KS)[0m[0K
+$[0K[3G[?25h[?25l$ git commit -m"add new files"[0K[?25h[?25l
+[0K[?25h[Capstone_Dev_KS 1630132] add new files[0K[?25l
+ 8 files changed, 230 insertions(+), 120 deletions(-)[0K
+ rewrite .Rproj.user/ECD6AA48/console06/INDEX001 (85%)[0K
+ rewrite capstoneStats.Rmd (78%)[0K
+[0K[?25h[?25l
+[0;32msanti@BRICK [0;35m [0;33m~/Documents/Downloads/Capstone[0;36m (Capstone_Dev_KS)[0m[0K[14G[?25h[1G[?25l
+[0K[?25h$[0K[3G[?25l$ git commit -m"add new files"[0K[?25h[?25l$ git add --all[0K[?25h[?25l$ git pull origin Capstone_Dev_KS[0K[?25h[?25l
+[0K[?25hFrom https://github.com/sitruks/Capstone[0K[?25l
+ * branch            Capstone_Dev_KS -> FETCH_HEAD[0K
+[0K[?25h[?25lPerforming inexact rename detection:  98% (2538/2585)[0K[1G[?25hPerforming inexact rename detection: 100% (2585/2585), done.[0K[?25l
+[0K[?25hRemoving Capstone.Rproj[0K[?25l
+Auto-merging .gitignore[0K
+CONFLICT (modify/delete): .Rhistory deleted in a54ca3e09bd11ee8d7167ef3ff0d1ffde35bf294[0K
+and modified in HEAD. Version HEAD of .Rhistory left in tree.[0K
+Automatic merge failed; fix conflicts and then commit the result.[0K
+[0K[?25h[?25l
+[0;32msanti@BRICK [0;35m [0;33m~/Documents/Downloads/Capstone[0;36m (Capstone_Dev_KS|MERGING)[0m[0K
+$[0K[3G[?25h[?25l$ git pull origin Capstone_Dev_KS[0K[?25h[?25l$ git commit -m"add new files"[0K[?25h[?25l$ git pull origin Capstone_Dev_KS[0K[?25h[?25l$ git commit -m"add new files"[0K[34G[?25h[31G[?25l$ git ew files"[0K[31G[?25h[?25l$ git add --all[0K[?25h[?25l$ git commit -m"add new files"[0K[?25h[0m[0K]0;:/c/Users/santi/Documents/Downloads/Capstone[?25l
+[0;32msanti@BRICK [0;35m [0;33m~/Documents/Downloads/Capstone[0;36m (Capstone_Dev_KS|MERGING)[0m[0K
+[?25l$ pwd[0K[?25h[?25l$ cd /c/Users/santi/Desktop[0K[?25h[?25l$ pwd[0K[?25h[?25l$ cd ~[0K[?25h[?25l$ ls -a[0K[?25h[?25l$ pwd[0K[?25h[?25l$ ls -a[0K[?25h[?25l$ cd ~[0K[?25h[?25l$ pwd[0K[?25h[?25l$ cd /c/Users/santi/Desktop[0K[?25h[?25l$ pwd[0K[?25h[?25l$[0K[3G[?25h[?25l$ git commit -m"add new files"[0K[?25h[?25l
+[0K[?25herror: Committing is not possible because you have unmerged files.[0K[?25l
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'[0K
+hint: as appropriate to mark resolution and make a commit.[0K
+fatal: Exiting because of an unresolved conflict.[0K
+U       .Rhistory[0K
+[0K[?25h[?25l
+[0;32msanti@BRICK [0;35m [0;33m~/Documents/Downloads/Capstone[0;36m (Capstone_Dev_KS|MERGING)[0m[0K
+$[0K[3G[?25h[?25l
+[0K[?25h[?25l
+[0;32msanti@BRICK [0;35m [0;33m~/Documents/Downloads/Capstone[0;36m (Capstone_Dev_KS|MERGING)[0m[0K
+$[0K[3G[?25h[?25l$ git commit -m"add new files"[0K[?25h[?25l$ git commit -m"add new files[0K[?25h[?25l$ git commit -m"add new file[0K[?25h[?25l$ git commit -m"add new fil[0K[?25h[?25l$ git commit -m"add new fi[0K[?25h[?25l$ git commit -m"add new f[0K[?25h[?25l$ git commit -m"add new[0K[25G[?25h[24G[?25l$ git commit -m"add ne[0K[24G[?25h[?25l$ git commit -m"add n[0K[?25h[?25l$ git commit -m"add[0K[21G[?25h[?25l$ git commit -m"ad[0K[?25h[?25l$ git commit -m"a[0K[?25h[?25l$ git commit -m"[0K[?25h[?25l$ git commit -[0K[16G[?25h[15G[?25l$ git commit[0K[?25h[?25l$ git commi[0K[?25h[?25l$ git comm[0K[?25h[?25l$ git com[0K[?25h[?25l$ git co[0K[?25h[?25l$ git[0K[7G[?25h[6G[?25l$ gi[0K[?25h[?25l$ g[0K[?25h[?25l$[0K[3G[?25h
