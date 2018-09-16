@@ -24,7 +24,8 @@
 
 ##   Load the National Health Interview Survey data:
 
-NH11 <- readRDS("dataSets/NatHealth2011.rds")
+setwd("C:/Users/v-kursan/Downloads/Capstone_DS/Reporting/logistic_regression/")
+NH11 <- readRDS("Exercises/NatHealth2011.rds")
 labs <- attributes(NH11)$labels
 
 ##   [CDC website] http://www.cdc.gov/nchs/nhis.htm
@@ -59,6 +60,7 @@ coef(summary(hyp.out))
 hyp.out.tab <- coef(summary(hyp.out))
 hyp.out.tab[, "Estimate"] <- exp(coef(hyp.out))
 hyp.out.tab
+
 
 ## Generating predicted values
 ## ───────────────────────────────
@@ -100,8 +102,42 @@ plot(allEffects(hyp.out))
 
 ##   1. Use glm to conduct a logistic regression to predict ever worked
 ##      (everwrk) using age (age_p) and marital status (r_maritl).
+library(tidyverse)
+library(effects)
+
+str(NH11$everwrk)
+levels(NH11$everwrk)
+NH11$everwrk <- factor(NH11$everwrk, levels=c("2 No", "1 Yes"))
+
+# filter out outliers from sleep (>97)
+unique(NH11$sleep)
+NH11 <- subset(NH11, sleep < 97)
+
+unique(NH11$age_p) %>%  sort()
+levels(NH11$r_maritl) <- c("0_14YO", "M_SIH", "M_SNIH", "M_Ukwn", "Wid", "Div", "Sep", "NvrM", "LWP", "Ukwn")
+
+everwrk.out <- glm(everwrk~age_p+r_maritl,
+               data=NH11, family="binomial")
+
+everwrk.out.tab <- coef(summary(everwrk.out))
+everwrk.out.tab[, "Estimate"] <- exp(coef(everwrk.out))
+everwrk.out.tab
+
+plot(everwrk ~ age_p, data = NH11)
+plot(everwrk ~ r_maritl, data = NH11)
+
+plot(allEffects(everwrk.out))
+
 ##   2. Predict the probability of working for each level of marital
 ##      status.
+
+predDat2 <- with(NH11, expand.grid(r_maritl = unique(NH11$r_maritl)))
+
+predDat2.tab <- cbind(predDat2, predict(everwrk.out, type = "response",
+                                        se.fit = TRUE, interval="confidence",
+                                        newdata = predDat2))
+
+predDat2.tab
 
 ##   Note that the data is not perfectly clean and ready to be modeled. You
 ##   will need to clean up at least some of the variables before fitting
