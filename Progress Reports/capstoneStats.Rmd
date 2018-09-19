@@ -9,9 +9,21 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-##### NCAA Basketball Tournament Prediction Model\: Home Field Advantage
+## NCAA Basketball Tournament Prediction Model: Home Field Advantage
 
-##### **Problem**
+### **Explore Data**
+
+In order to make sense of the data, I need to first explore it (InitialVisualization_Capstone.R).
+
+Immediately, I was reminded of the discrepancies in tournament play over time, namely the total field change from 32 to 64 in 1985. One team was added to the mix in 2001. In the 2011 season 4 teams were added -- solidifying the current (2018) 68-team tournament. As such, properly filtering out data pre-XXXX will be an important item to consider. 
+
+The 
+
+### **Apply Statistics**
+
+### **Interesting Findings**
 
 
-##### **Solution**
+### **Actions**
+
+
