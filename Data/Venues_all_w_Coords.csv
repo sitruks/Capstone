@@ -1,0 +1,386 @@
+"","Address","Arena","City","State  Abrv","State","Team","Gender Distinction","Conference","Capacity","Opened","Lat","Lon"
+"1","Chestnut Hill, MA, Conte Forum","Conte Forum","Chestnut Hill","MA","Massachusetts","Boston College",NA,"ACC","8,606","1988",-71.1676364,42.3350945
+"2","Clemson, SC, Littlejohn Coliseum","Littlejohn Coliseum","Clemson","SC","South Carolina","Clemson",NA,"ACC","10,000","1968",-82.8464242,34.6804137
+"3","Durham, NC, Cameron Indoor Stadium","Cameron Indoor Stadium","Durham","NC","North Carolina","Duke",NA,"ACC","9,314","1940",-78.9424182,35.997174
+"4","Tallahassee, FL, Donald L. Tucker Civic Center","Donald L. Tucker Civic Center","Tallahassee","FL","Florida","Florida State",NA,"ACC","12,100","1981",-84.2866581,30.4377823
+"5","Atlanta, GA, Hank McCamish Pavilion","Hank McCamish Pavilion","Atlanta","GA","Georgia","Georgia Tech",NA,"ACC","8,600","1956",-84.3927714,33.780684
+"6","Louisville, KY, KFC Yum! Center","KFC Yum! Center","Louisville","KY","Kentucky","Louisville",NA,"ACC","22,090","2010",-85.7538323,38.2577834
+"7","Coral Gables, FL, Watsco Center","Watsco Center","Coral Gables","FL","Florida","Miami (FL)",NA,"ACC","7,972","2003",-80.2793919,25.7153067
+"8","Chapel Hill, NC, Dean Smith Center","Dean Smith Center","Chapel Hill","NC","North Carolina","North Carolina Men","Men","ACC","21,750","1986",-79.0438731,35.8994844
+"9","Raleigh, NC, PNC Arena","PNC Arena","Raleigh","NC","North Carolina","North Carolina State men","Men","ACC","19,557","1999",-78.7217946,35.8033394
+"10","Notre Dame, IN, Edmund P. Joyce Center","Edmund P. Joyce Center","Notre Dame","IN","Indiana","Notre Dame",NA,"ACC","9,149","1968",-86.2311409,41.6972526
+"11","Pittsburgh, PA, Petersen Events Center","Petersen Events Center","Pittsburgh","PA","Pennsylvania","Pittsburgh",NA,"ACC","12,508","2002",-79.9622834,40.4438281
+"12","Syracuse, NY, Carrier Dome","Carrier Dome","Syracuse","NY","New York","Syracuse",NA,"ACC","35,446","1980",-76.1363161,43.0362269
+"13","Charlottesville, VA, John Paul Jones Arena","John Paul Jones Arena","Charlottesville","VA","Virginia","Virginia",NA,"ACC","14,593","2006",-78.5067369,38.0459472
+"14","Blacksburg, VA, Cassell Coliseum","Cassell Coliseum","Blacksburg","VA","Virginia","Virginia Tech",NA,"ACC","9,847","1962",-80.41948,37.22313
+"15","Winston-Salem, NC, Lawrence Joel Veterans Memorial Coliseum","Lawrence Joel Veterans Memorial Coliseum","Winston-Salem","NC","North Carolina","Wake Forest",NA,"ACC","14,665","1989",-80.2574934,36.1277077
+"16","Guilderland, NY, SEFCU Arena","SEFCU Arena","Guilderland","NY","New York","Albany",NA,"America East","4,538","1992",-73.8283427,42.6820352
+"17","Vestal, NY, Binghamton University Events Center","Binghamton University Events Center","Vestal","NY","New York","Binghamton",NA,"America East","5,142","2004",-75.9719572,42.0934421
+"18","Hartford, CT, Chase Arena","Chase Arena","Hartford","CT","Connecticut","Hartford",NA,"America East","4,017","1990",-72.7165307,41.8018395
+"19","Bangor, ME, Cross Insurance Center","Cross Insurance Center","Bangor","ME","Maine","Maine",NA,"America East","5,800","2013",-68.77929,44.788802
+"20","Durham, NH, Lundholm Gym","Lundholm Gym","Durham","NH","New Hampshire","New Hampshire",NA,"America East","3,500","1938",-70.9375613,43.1388127
+"21","Stony Brook, NY, Island Federal Credit Union Arena","Island Federal Credit Union Arena","Stony Brook","NY","New York","Stony Brook",NA,"America East","4,160","1967",-73.12595,40.9174122
+"22","Lowell, MA, Costello Athletic Center","Costello Athletic Center","Lowell","MA","Massachusetts","UMass Lowell",NA,"America East","2,100","1964",-71.3243687,42.6553218
+"23","Lowell, MA, Tsongas Center at UMass Lowell","Tsongas Center at UMass Lowell","Lowell","MA","Massachusetts","UMass Lowell",NA,"America East","6,496","1998",-71.3132192,42.6502369
+"24","Catonsville, MD, UMBC Event Center","UMBC Event Center","Catonsville","MD","Maryland","UMBC",NA,"America East","5,000","2018",-76.707431,39.2523419
+"25","Burlington, VT, Patrick Gym","Patrick Gym","Burlington","VT","Vermont","Vermont",NA,"America East","3,228","1963",-73.1946516,44.4699564
+"26","Cincinnati, OH, Fifth Third Arena","Fifth Third Arena","Cincinnati","OH","Ohio","Cincinnati",NA,"The American","13,176","1989",-84.5142013,39.1311671
+"27","Storrs, CT, Harry A. Gampel Pavilion[a]","Harry A. Gampel Pavilion[a]","Storrs","CT","Connecticut","Connecticut",NA,"The American","10,167","1990",-72.2544231,41.805293
+"28","Greenville, NC, Williams Arena at Minges Coliseum","Williams Arena at Minges Coliseum","Greenville","NC","North Carolina","East Carolina",NA,"The American","8,000","1968",-77.3673322,35.5974695
+"29","Houston, TX, Fertitta Center","Fertitta Center","Houston","TX","Texas","Houston",NA,"The American","8,469","1969",-95.346933,29.7246681
+"30","Memphis, TN, FedExForum","FedExForum","Memphis","TN","Tennessee","Memphis men","Men","The American","18,119","2004",-90.0504738,35.1382037
+"31","University Park, TX, Moody Coliseum","Moody Coliseum","University Park","TX","Texas","SMU",NA,"The American","7,000","1956",-96.780687,32.8403428
+"32","Tampa, FL, Yuengling Center","Yuengling Center","Tampa","FL","Florida","South Florida",NA,"The American","10,411","1980",-82.4065357,28.0592634
+"33","Philadelphia, PA, Liacouras Center[b]","Liacouras Center[b]","Philadelphia","PA","Pennsylvania","Temple",NA,"The American","10,205","1997",-75.1585516,39.9798691
+"34","New Orleans, LA, Devlin Fieldhouse","Devlin Fieldhouse","New Orleans","LA","Louisiana","Tulane",NA,"The American","3,600","1933",-90.1208204,29.939013
+"35","Tulsa, OK, Reynolds Center","Reynolds Center","Tulsa","OK","Oklahoma","Tulsa",NA,"The American","8,355","1998",-95.9421255,36.1489954
+"36","Orlando, FL, CFE Arena","CFE Arena","Orlando","FL","Florida","UCF",NA,"The American","9,465","2007",-81.1973669,28.607225
+"37","Wichita, KS, Charles Koch Arena[c]","Charles Koch Arena[c]","Wichita","KS","Kansas","Wichita State",NA,"The American","10,506","1955",-97.2974408,37.7216934
+"38","Davidson, NC, John M. Belk Arena","John M. Belk Arena","Davidson","NC","North Carolina","Davidson",NA,"Atlantic 10","5,223","1989",-80.8403689,35.4992686
+"39","Dayton, OH, University of Dayton Arena","University of Dayton Arena","Dayton","OH","Ohio","Dayton",NA,"Atlantic 10","13,435","1969",-84.1997159,39.7356112
+"40","Pittsburgh, PA, Palumbo Center","Palumbo Center","Pittsburgh","PA","Pennsylvania","Duquesne",NA,"Atlantic 10","4,406","1988",-79.9878928,40.4373509
+"41","Bronx, NY, Rose Hill Gymnasium","Rose Hill Gymnasium","Bronx","NY","New York","Fordham",NA,"Atlantic 10","3,200","1925",-73.8837651,40.862211
+"42","Fairfax, VA, EagleBank Arena","EagleBank Arena","Fairfax","VA","Virginia","George Mason",NA,"Atlantic 10","10,000","1985",-77.3089367,38.8260676
+"43","Washington, DC, Charles E. Smith Center","Charles E. Smith Center","Washington","DC","District of Columbia","George Washington",NA,"Atlantic 10","5,000","1975",-77.049338,38.8978433
+"44","Philadelphia, PA, Tom Gola Arena","Tom Gola Arena","Philadelphia","PA","Pennsylvania","La Salle",NA,"Atlantic 10","3,400","1998",-75.1565641,40.0399077
+"45","Amherst, MA, William D. Mullins Memorial Center","William D. Mullins Memorial Center","Amherst","MA","Massachusetts","Massachusetts",NA,"Atlantic 10","9,493","1993",-72.5334464,42.389382
+"46","Kingston, RI, Ryan Center","Ryan Center","Kingston","RI","Rhode Island","Rhode Island",NA,"Atlantic 10","7,657","2002",-71.5357485,41.4877684
+"47","Richmond, VA, Robins Center","Robins Center","Richmond","VA","Virginia","Richmond",NA,"Atlantic 10","7,201","1972",-77.5388335,37.5807848
+"48","St. Bonaventure, NY, Reilly Center","Reilly Center","St. Bonaventure","NY","New York","St. Bonaventure",NA,"Atlantic 10","5,480","1966",-78.4849211,42.0795846
+"49","Philadelphia, PA, Hagan Arena","Hagan Arena","Philadelphia","PA","Pennsylvania","Saint Joseph's",NA,"Atlantic 10","4,200","1949",-75.2350576,39.995661
+"50","St. Louis, MO, Chaifetz Arena","Chaifetz Arena","St. Louis","MO","Missouri","Saint Louis",NA,"Atlantic 10","10,600","2008",-90.227955,38.632511
+"51","Richmond, VA, Siegel Center","Siegel Center","Richmond","VA","Virginia","Virginia Commonwealth",NA,"Atlantic 10","7,617","1999",-77.4529507,37.5529242
+"52","Fort Myers, FL, Alico Arena","Alico Arena","Fort Myers","FL","Florida","Florida Gulf Coast",NA,"ASUN","4,500","2002",-81.7646879,26.4708212
+"53","Jacksonville, FL, Swisher Gymnasium","Swisher Gymnasium","Jacksonville","FL","Florida","Jacksonville",NA,"ASUN","1,500","1953",-81.6049621,30.3502343
+"54","Kennesaw, GA, KSU Convocation Center","KSU Convocation Center","Kennesaw","GA","Georgia","Kennesaw State",NA,"ASUN","4,792","2003",-84.5803692,34.0368592
+"55","Lynchburg, VA, Vines Center","Vines Center","Lynchburg","VA","Virginia","Liberty",NA,"ASUN","9,547","1990",-79.1810641,37.348916
+"56","Florence, AL, Flowers Hall","Flowers Hall","Florence","AL","Alabama","North Alabama",NA,"ASUN","3,900","1972",-87.6837689,34.8084699
+"57","Nashville, TN, Allen Arena","Allen Arena","Nashville","TN","Tennessee","Lipscomb",NA,"ASUN","5,028","2001",-86.7989168,36.1037312
+"58","Newark, NJ, Wellness and Events Center","Wellness and Events Center","Newark","NJ","New Jersey","NJIT",NA,"ASUN","3,500","2017",-74.1804421,40.7422515
+"59","Jacksonville, FL, UNF Arena","UNF Arena","Jacksonville","FL","Florida","North Florida",NA,"ASUN","5,800","1993",-81.5079992,30.2734675
+"60","DeLand, FL, Edmunds Center","Edmunds Center","DeLand","FL","Florida","Stetson",NA,"ASUN","5,000","1974",-81.3018584,29.0395387
+"61","Waco, TX, Ferrell Center","Ferrell Center","Waco","TX","Texas","Baylor",NA,"Big 12","10,347","1988",-97.1057569,31.5479445
+"62","Ames, IA, Hilton Coliseum","Hilton Coliseum","Ames","IA","Iowa","Iowa State",NA,"Big 12","14,376","1971",-93.634821,42.021009
+"63","Lawrence, KS, Allen Fieldhouse","Allen Fieldhouse","Lawrence","KS","Kansas","Kansas",NA,"Big 12","16,300","1955",-95.2527792,38.954145
+"64","Manhattan, KS, Bramlage Coliseum","Bramlage Coliseum","Manhattan","KS","Kansas","Kansas State",NA,"Big 12","12,528","1988",-96.5938128,39.2003584
+"65","Norman, OK, Lloyd Noble Center","Lloyd Noble Center","Norman","OK","Oklahoma","Oklahoma",NA,"Big 12","11,528","1973",-97.443696,35.1874
+"66","Stillwater, OK, Gallagher-Iba Arena","Gallagher-Iba Arena","Stillwater","OK","Oklahoma","Oklahoma State",NA,"Big 12","13,611","1938",-97.0650012,36.1257301
+"67","Austin, TX, Frank Erwin Center","Frank Erwin Center","Austin","TX","Texas","Texas",NA,"Big 12","16,734","1977",-97.7321651,30.2769698
+"68","Fort Worth, TX, Schollmaier Arena","Schollmaier Arena","Fort Worth","TX","Texas","TCU",NA,"Big 12","8,500","1961",-97.3667142,32.7088144
+"69","Lubbock, TX, United Supermarkets Arena","United Supermarkets Arena","Lubbock","TX","Texas","Texas Tech",NA,"Big 12","15,020","1999",-101.886563,33.581334
+"70","Morgantown, WV, WVU Coliseum","WVU Coliseum","Morgantown","WV","West Virginia","West Virginia",NA,"Big 12","14,000","1970",-79.9815603,39.6493379
+"71","Indianapolis, IN, Hinkle Fieldhouse","Hinkle Fieldhouse","Indianapolis","IN","Indiana","Butler",NA,"Big East","9,100","1928",-86.1673075,39.8435575
+"72","Omaha, NE, CHI Health Center Omaha","CHI Health Center Omaha","Omaha","NE","Nebraska","Creighton men","Men","Big East","18,320","2003",-95.9282394,41.2624236
+"73","Chicago, IL, Wintrust Arena","Wintrust Arena","Chicago","IL","Illinois","DePaul",NA,"Big East","10,387","2017",-87.6213473,41.853739
+"74","Washington, DC, Capital One Arena","Capital One Arena","Washington","DC","District of Columbia","Georgetown men","Men","Big East","20,308","1997",-77.0208799,38.8980581
+"75","Milwaukee, WI, Fiserv Forum","Fiserv Forum","Milwaukee","WI","Wisconsin","Marquette men","Men","Big East","17,500","2018",-87.9174016,43.044901
+"76","Providence, RI, Dunkin' Donuts Center","Dunkin' Donuts Center","Providence","RI","Rhode Island","Providence men","Men","Big East","12,400","1972",-71.4179556,41.8236281
+"77","Newark, NJ, Prudential Center","Prudential Center","Newark","NJ","New Jersey","Seton Hall men","Men","Big East","18,711","2007",-74.1710255,40.7335424
+"78","New York, NY, Madison Square Garden[d]","Madison Square Garden[d]","New York","NY","New York","St. John's men","Men","Big East","19,812","1968",-73.9934387,40.7505045
+"79","Villanova, PA, Finneran Pavilion[e]","Finneran Pavilion[e]","Villanova","PA","Pennsylvania","Villanova",NA,"Big East","6,500","1986",-75.336514,40.034042
+"80","Cincinnati, OH, Cintas Center","Cintas Center","Cincinnati","OH","Ohio","Xavier",NA,"Big East","10,250","2000",-84.4718415,39.1503616
+"81","Cheney, WA, Reese Court","Reese Court","Cheney","WA","Washington","Eastern Washington",NA,"Big Sky","6,000","1981",-117.5893925,47.4913724
+"82","Moscow, ID, Cowan Spectrum[f]","Cowan Spectrum[f]","Moscow","ID","Idaho","Idaho",NA,"Big Sky","7,000","1975",-117.0173906,46.7263518
+"83","Pocatello, ID, Holt Arena","Holt Arena","Pocatello","ID","Idaho","Idaho State men","Men","Big Sky","8,000","1970",-112.4285716,42.8699998
+"84","Missoula, MT, Dahlberg Arena","Dahlberg Arena","Missoula","MT","Montana","Montana",NA,"Big Sky","7,321","1953",-113.983347,46.8635552
+"85","Bozeman, MT, Worthington Arena","Worthington Arena","Bozeman","MT","Montana","Montana State",NA,"Big Sky","7,250","1957",-111.0506591,45.6633486
+"86","Flagstaff, AZ, Walkup Skydome","Walkup Skydome","Flagstaff","AZ","Arizona","Northern Arizona",NA,"Big Sky","11,230","1977",-111.6528102,35.1805078
+"87","Greeley, CO, Bank of Colorado Arena","Bank of Colorado Arena","Greeley","CO","Colorado","Northern Colorado",NA,"Big Sky","2,992","1975",-104.7030436,40.4022171
+"88","Portland, OR, Peter Stott Center","Peter Stott Center","Portland","OR","Oregon","Portland State",NA,"Big Sky","2,000","1966",-122.6867564,45.5110426
+"89","Sacramento, CA, Hornets Nest","Hornets Nest","Sacramento","CA","California","Sacramento State",NA,"Big Sky","1,012[1]","1955",-121.4266147,38.5619639
+"90","Cedar City, UT, America First Events Center","America First Events Center","Cedar City","UT","Utah","Southern Utah",NA,"Big Sky","5,300","1985",-113.0728667,37.6755309
+"91","Ogden, UT, Dee Events Center","Dee Events Center","Ogden","UT","Utah","Weber State",NA,"Big Sky","11,500","1977",-111.9450635,41.1823818
+"92","Buies Creek, NC, John W. Pope, Jr. Convocation Center","John W. Pope, Jr. Convocation Center","Buies Creek","NC","North Carolina","Campbell",NA,"Big South","3,095","2008",-78.7367719,35.4078504
+"93","North Charleston, SC, CSU Field House","CSU Field House","North Charleston","SC","South Carolina","Charleston Southern",NA,"Big South","881","1965",-80.0670864,32.9807901
+"94","Boiling Springs, NC, Paul Porter Arena","Paul Porter Arena","Boiling Springs","NC","North Carolina","Gardner–Webb",NA,"Big South","5,000","1982",-81.6695574,35.2465436
+"95","Hampton, VA, Hampton Convocation Center","Hampton Convocation Center","Hampton","VA","Virginia","Hampton",NA,"Big South","7,200","1993",-76.3310786,37.0198344
+"96","High Point, NC, Millis Athletic Convocation Center","Millis Athletic Convocation Center","High Point","NC","North Carolina","High Point",NA,"Big South","1,750","1992",-79.9960005,35.9711065
+"97","Farmville, VA, Willett Hall","Willett Hall","Farmville","VA","Virginia","Longwood",NA,"Big South","1,807","1980",-76.3472707,36.8385299
+"98","Clinton, SC, Templeton Physical Education Center","Templeton Physical Education Center","Clinton","SC","South Carolina","Presbyterian",NA,"Big South","2,300","1975",-81.8689853,34.4650766
+"99","Radford, VA, Dedmon Center","Dedmon Center","Radford","VA","Virginia","Radford",NA,"Big South","3,205","1981",-80.5415574,37.138475
+"100","Asheville, NC, Kimmel Arena","Kimmel Arena","Asheville","NC","North Carolina","UNC Asheville",NA,"Big South","3,200","2011",-82.5673128,35.616292
+"101","Spartanburg, SC, G. B. Hodge Center","G. B. Hodge Center","Spartanburg","SC","South Carolina","USC Upstate",NA,"Big South","878","1973",-81.9688331,34.9957778
+"102","Rock Hill, SC, Winthrop Coliseum","Winthrop Coliseum","Rock Hill","SC","South Carolina","Winthrop",NA,"Big South","6,100","1982",-81.0149026,34.9480739
+"103","Champaign, IL, State Farm Center","State Farm Center","Champaign","IL","Illinois","Illinois",NA,"Big Ten","16,618","1963",-88.2358984,40.0961996
+"104","Bloomington, IN, Simon Skjodt Assembly Hall","Simon Skjodt Assembly Hall","Bloomington","IN","Indiana","Indiana",NA,"Big Ten","17,472","1971",-86.5221541,39.180866
+"105","Iowa City, IA, Carver–Hawkeye Arena","Carver–Hawkeye Arena","Iowa City","IA","Iowa","Iowa",NA,"Big Ten","15,500","1983",-91.5546047,41.663778
+"106","College Park, MD, Xfinity Center","Xfinity Center","College Park","MD","Maryland","Maryland",NA,"Big Ten","17,950","2002",-76.9413918,38.9953452
+"107","Ann Arbor, MI, Crisler Center","Crisler Center","Ann Arbor","MI","Michigan","Michigan",NA,"Big Ten","12,707","1967",-83.7467082,42.2650465
+"108","East Lansing, MI, Breslin Student Events Center","Breslin Student Events Center","East Lansing","MI","Michigan","Michigan State",NA,"Big Ten","14,797","1989",-84.4923695,42.7283325
+"109","Minneapolis, MN, Williams Arena","Williams Arena","Minneapolis","MN","Minnesota","Minnesota",NA,"Big Ten","14,625","1928",-93.2279713,44.9768472
+"110","Lincoln, NE, Pinnacle Bank Arena","Pinnacle Bank Arena","Lincoln","NE","Nebraska","Nebraska",NA,"Big Ten","15,147","2013",-96.7126194,40.817931
+"111","Evanston, IL, Welsh-Ryan Arena","Welsh-Ryan Arena","Evanston","IL","Illinois","Northwestern",NA,"Big Ten","8,117","1952",-87.6924696,42.0668161
+"112","Columbus, OH, Value City Arena","Value City Arena","Columbus","OH","Ohio","Ohio State",NA,"Big Ten","18,809","1998",-83.0250631,40.00766
+"113","University Park, PA, Bryce Jordan Center","Bryce Jordan Center","University Park","PA","Pennsylvania","Penn State",NA,"Big Ten","15,261","1996",-77.8556061,40.8086107
+"114","West Lafayette, IN, Mackey Arena","Mackey Arena","West Lafayette","IN","Indiana","Purdue",NA,"Big Ten","14,848","1967",-86.9157668,40.4332234
+"115","Piscataway, NJ, Louis Brown Athletic Center","Louis Brown Athletic Center","Piscataway","NJ","New Jersey","Rutgers",NA,"Big Ten","8,000","1977",-74.441353,40.52525
+"116","Madison, WI, Kohl Center","Kohl Center","Madison","WI","Wisconsin","Wisconsin",NA,"Big Ten","17,249","1998",-89.39672,43.069396
+"117","San Luis Obispo, CA, Mott Gym","Mott Gym","San Luis Obispo","CA","California","Cal Poly",NA,"Big West","3,032","1960",-120.6585838,35.2988715
+"118","Fullerton, CA, Titan Gym","Titan Gym","Fullerton","CA","California","Cal State Fullerton",NA,"Big West","4,000","1964",-117.8858875,33.883022
+"119","Northridge, CA, Matadome","Matadome","Northridge","CA","California","Cal State Northridge",NA,"Big West","2,400","1962",-118.5259044,34.2419495
+"120","Honolulu, HI, Stan Sheriff Center","Stan Sheriff Center","Honolulu","HI","Hawaii","Hawaii men","Men","Big West","10,300","1994",-157.8189039,21.2942882
+"121","Long Beach, CA, Walter Pyramid","Walter Pyramid","Long Beach","CA","California","Long Beach State",NA,"Big West","5,000","1994",-118.1143892,33.7873979
+"122","Davis, CA, The Pavilion at ARC","The Pavilion at ARC","Davis","CA","California","UC Davis",NA,"Big West","7,600","1977",-121.7596409,38.5417908
+"123","Irvine, CA, Bren Events Center","Bren Events Center","Irvine","CA","California","UC Irvine",NA,"Big West","4,984","1987",-117.8470597,33.6494028
+"124","Riverside, CA, Student Recreation Center Arena","Student Recreation Center Arena","Riverside","CA","California","UC Riverside",NA,"Big West","3,168","1994",-117.3279454,33.9782498
+"125","Santa Barbara, CA, UC Santa Barbara Events Center","UC Santa Barbara Events Center","Santa Barbara","CA","California","UC Santa Barbara",NA,"Big West","5,600","1979",-119.8452672,34.4112195
+"126","Charleston, SC, TD Arena","TD Arena","Charleston","SC","South Carolina","Charleston",NA,"CAA","5,100","2008",-79.9343716,32.7854388
+"127","Newark, DE, Bob Carpenter Center","Bob Carpenter Center","Newark","DE","Delaware","Delaware",NA,"CAA","5,000","1992",-75.748991,39.660489
+"128","Philadelphia, PA, Daskalakis Athletic Center","Daskalakis Athletic Center","Philadelphia","PA","Pennsylvania","Drexel",NA,"CAA","2,509","1974",-75.1907406,39.9563762
+"129","Elon, NC, Schar Center","Schar Center","Elon","NC","North Carolina","Elon",NA,"CAA","5,100","2018",-79.5108076,36.1080342
+"130","Hempstead, NY, Hofstra Arena","Hofstra Arena","Hempstead","NY","New York","Hofstra",NA,"CAA","5,124","2000",-73.5968515,40.7197194
+"131","Harrisonburg, VA, James Madison University Convocation Center","James Madison University Convocation Center","Harrisonburg","VA","Virginia","James Madison",NA,"CAA","7,156","1982",-78.8688456,38.4319182
+"132","Boston, MA, Matthews Arena","Matthews Arena","Boston","MA","Massachusetts","Northeastern men","Men","CAA","6,000","1910",-71.084523,42.3412352
+"133","Towson, MD, SECU Arena","SECU Arena","Towson","MD","Maryland","Towson",NA,"CAA","5,200","2013",-76.6171503,39.3873866
+"134","Wilmington, NC, Trask Coliseum","Trask Coliseum","Wilmington","NC","North Carolina","UNC Wilmington",NA,"CAA","5,200","1977",-77.8783141,34.2249981
+"135","Williamsburg, VA, Kaplan Arena","Kaplan Arena","Williamsburg","VA","Virginia","William & Mary",NA,"CAA","8,600","1971",-76.719668,37.2734888
+"136","Charlotte, NC, Dale F. Halton Arena","Dale F. Halton Arena","Charlotte","NC","North Carolina","Charlotte",NA,"C-USA","9,105","1996",-80.8312199,35.2169489
+"137","Boca Raton, FL, FAU Arena","FAU Arena","Boca Raton","FL","Florida","Florida Atlantic",NA,"C-USA","5,000","1984",-80.1093647,26.3723396
+"138","Miami, FL, FIU Arena","FIU Arena","Miami","FL","Florida","Florida International",NA,"C-USA","5,000","1986",-80.3795409,25.7569257
+"139","Ruston, LA, Thomas Assembly Center","Thomas Assembly Center","Ruston","LA","Louisiana","Louisiana Tech",NA,"C-USA","8,098","1982",-92.658733,32.5319955
+"140","Huntington, WV, Cam Henderson Center","Cam Henderson Center","Huntington","WV","West Virginia","Marshall",NA,"C-USA","9,048","1981",-82.4250555,38.4243695
+"141","Murfreesboro, TN, Murphy Center","Murphy Center","Murfreesboro","TN","Tennessee","Middle Tennessee",NA,"C-USA","11,520","1972",-86.3694547,35.8523923
+"142","Denton, TX, UNT Coliseum","UNT Coliseum","Denton","TX","Texas","North Texas",NA,"C-USA","10,032","1973",-97.1540981,33.2086228
+"143","Norfolk, VA, Ted Constant Convocation Center","Ted Constant Convocation Center","Norfolk","VA","Virginia","Old Dominion",NA,"C-USA","9,520","2002",-76.3013211,36.8841435
+"144","Houston, TX, Tudor Fieldhouse","Tudor Fieldhouse","Houston","TX","Texas","Rice",NA,"C-USA","5,750","1950",-95.40389,29.7151
+"145","Hattiesburg, MS, Reed Green Coliseum","Reed Green Coliseum","Hattiesburg","MS","Mississippi","Southern Miss",NA,"C-USA","8,095","1965",-89.3374354,31.3304184
+"146","Birmingham, AL, Bartow Arena","Bartow Arena","Birmingham","AL","Alabama","UAB",NA,"C-USA","8,508","1988",-86.8092712,33.5022194
+"147","El Paso, TX, Don Haskins Center","Don Haskins Center","El Paso","TX","Texas","UTEP",NA,"C-USA","12,222","1976",-106.505605,31.777715
+"148","San Antonio, TX, Convocation Center","Convocation Center","San Antonio","TX","Texas","UTSA",NA,"C-USA","4,080","1975",-98.6214107,29.5823631
+"149","Bowling Green, KY, E. A. Diddle Arena","E. A. Diddle Arena","Bowling Green","KY","Kentucky","Western Kentucky",NA,"C-USA","7,326","1963",-86.4576141,36.9863238
+"150","Cleveland, OH, Wolstein Center","Wolstein Center","Cleveland","OH","Ohio","Cleveland State",NA,"Horizon","13,610","1991",-81.676497,41.499205
+"151","Detroit, MI, Calihan Hall","Calihan Hall","Detroit","MI","Michigan","Detroit Mercy",NA,"Horizon","8,295","1952",-83.1360608,42.4143679
+"152","Ashwaubenon, WI, Resch Center","Resch Center","Ashwaubenon","WI","Wisconsin","Green Bay men","Men","Horizon","9,729","2002",-88.0549032,44.4995277
+"153","Indianapolis, IN, Indiana Farmers Coliseum","Indiana Farmers Coliseum","Indianapolis","IN","Indiana","IUPUI men","Men","Horizon","6,841","1939",-86.1350072,39.8276805
+"154","Milwaukee, WI, UW–Milwaukee Panther Arena","UW–Milwaukee Panther Arena","Milwaukee","WI","Wisconsin","Milwaukee men","Men","Horizon","10,783","1950",-87.9168724,43.0417381
+"155","Highland Heights, KY, BB&T Arena","BB&T Arena","Highland Heights","KY","Kentucky","Northern Kentucky",NA,"Horizon","9,400","2008",-84.4534928,39.0332737
+"156","Rochester, MI, Athletics Center O'rena","Athletics Center O'rena","Rochester","MI","Michigan","Oakland",NA,"Horizon","4,005","1998",-83.2129533,42.6740472
+"157","Chicago, IL, UIC Pavilion","UIC Pavilion","Chicago","IL","Illinois","UIC",NA,"Horizon","6,958","1982",-87.6561411,41.8748558
+"158","Fairborn, OH, Nutter Center","Nutter Center","Fairborn","OH","Ohio","Wright State",NA,"Horizon","10,400","1990",-84.052137,39.782096
+"159","Youngstown, OH, Beeghly Center","Beeghly Center","Youngstown","OH","Ohio","Youngstown State",NA,"Horizon","6,500","1972",-80.6490217,41.1083058
+"160","Providence, RI, Pizzitola Sports Center","Pizzitola Sports Center","Providence","RI","Rhode Island","Brown",NA,"Ivy","2,800","1989",-71.3980885,41.8316983
+"161","New York, NY, Levien Gymnasium","Levien Gymnasium","New York","NY","New York","Columbia",NA,"Ivy","3,408","1974",-73.961672,40.80953
+"162","Ithaca, NY, Newman Arena","Newman Arena","Ithaca","NY","New York","Cornell",NA,"Ivy","4,473","1990",-76.4764139,42.4458085
+"163","Hanover, NH, Leede Arena","Leede Arena","Hanover","NH","New Hampshire","Dartmouth",NA,"Ivy","2,100","1986",-72.2829133,43.7030082
+"164","Allston, MA, Lavietes Pavilion","Lavietes Pavilion","Allston","MA","Massachusetts","Harvard",NA,"Ivy","2,195","1982",-71.1252674,42.368211
+"165","Philadelphia, PA, Palestra","Palestra","Philadelphia","PA","Pennsylvania","Penn",NA,"Ivy","8,722","1927",-75.1887032,39.9513911
+"166","Princeton, NJ, Jadwin Gymnasium","Jadwin Gymnasium","Princeton","NJ","New Jersey","Princeton",NA,"Ivy","6,854","1969",-74.6486685,40.3434557
+"167","New Haven, CT, Payne Whitney Gymnasium","Payne Whitney Gymnasium","New Haven","CT","Connecticut","Yale",NA,"Ivy","2,532","1932",-72.9305569,41.3139597
+"168","Buffalo, NY, Koessler Athletic Center","Koessler Athletic Center","Buffalo","NY","New York","Canisius",NA,"MAAC","2,176","1968",-78.8575314,42.9209439
+"169","Bridgeport, CT, Webster Bank Arena","Webster Bank Arena","Bridgeport","CT","Connecticut","Fairfield",NA,"MAAC","9,000","2001",-73.1870019,41.1732434
+"170","New Rochelle, NY, Hynes Athletic Center","Hynes Athletic Center","New Rochelle","NY","New York","Iona",NA,"MAAC","2,611","1974",-73.7856427,40.9261352
+"171","Bronx, NY, Draddy Gymnasium","Draddy Gymnasium","Bronx","NY","New York","Manhattan",NA,"MAAC","2,345","1978[2]",-73.9002497,40.89078
+"172","Poughkeepsie, NY, McCann Field House","McCann Field House","Poughkeepsie","NY","New York","Marist",NA,"MAAC","3,200","1977",-73.9351196,41.7173277
+"173","West Long Branch, NJ, Multipurpose Activity Center","Multipurpose Activity Center","West Long Branch","NJ","New Jersey","Monmouth",NA,"MAAC","4,100","2009",-74.0077835,40.279307
+"174","Lewiston, NY, Gallagher Center","Gallagher Center","Lewiston","NY","New York","Niagara",NA,"MAAC","2,400","1949",-79.0380159,43.1374081
+"175","Hamden, CT, TD Bank Sports Center","TD Bank Sports Center","Hamden","CT","Connecticut","Quinnipiac",NA,"MAAC","3,570","2007",-72.9110904,41.4142098
+"176","Lawrenceville, NJ, Alumni Gymnasium","Alumni Gymnasium","Lawrenceville","NJ","New Jersey","Rider",NA,"MAAC","1,950","1958",-74.7354358,40.2788285
+"177","Albany, NY, Times Union Center","Times Union Center","Albany","NY","New York","Siena men","Men","MAAC","15,229","1990",-73.7549371,42.6485901
+"178","Jersey City, NJ, Yanitelli Center","Yanitelli Center","Jersey City","NJ","New Jersey","Saint Peter's",NA,"MAAC","3,200","1975",-74.073102,40.7277258
+"179","Akron, OH, James A. Rhodes Arena","James A. Rhodes Arena","Akron","OH","Ohio","Akron",NA,"MAC","5,500","1983",-81.5087431,41.0758815
+"180","Muncie, IN, John E. Worthen Arena","John E. Worthen Arena","Muncie","IN","Indiana","Ball State",NA,"MAC","11,500","1991",-85.4061499,40.2070828
+"181","Bowling Green, OH, Stroh Center","Stroh Center","Bowling Green","OH","Ohio","Bowling Green",NA,"MAC","4,700","2011",-83.626208,41.375459
+"182","Amherst, NY, Alumni Arena","Alumni Arena","Amherst","NY","New York","Buffalo",NA,"MAC","6,100","1982",-78.7811679,43.0001109
+"183","Mount Pleasant, MI, McGuirk Arena","McGuirk Arena","Mount Pleasant","MI","Michigan","Central Michigan",NA,"MAC","5,300","1973",-84.7740592,43.5814943
+"184","Ypsilanti, MI, Convocation Center","Convocation Center","Ypsilanti","MI","Michigan","Eastern Michigan",NA,"MAC","8,824","1998",-83.6473247,42.2542182
+"185","Kent, OH, Memorial Athletic and Convocation Center","Memorial Athletic and Convocation Center","Kent","OH","Ohio","Kent State",NA,"MAC","6,327","1950",-81.3439854,41.1482226
+"186","Oxford, OH, Millett Hall","Millett Hall","Oxford","OH","Ohio","Miami (Ohio)",NA,"MAC","6,400","1968",-84.7345863,39.5167527
+"187","DeKalb, IL, Convocation Center","Convocation Center","DeKalb","IL","Illinois","Northern Illinois",NA,"MAC","10,000","2002",-88.7856583,41.9352122
+"188","Athens, OH, Convocation Center","Convocation Center","Athens","OH","Ohio","Ohio",NA,"MAC","13,080","1968",-82.1056916,39.323245
+"189","Toledo, OH, Savage Arena","Savage Arena","Toledo","OH","Ohio","Toledo",NA,"MAC","7,300","1976",-83.6097317,41.6601653
+"190","Kalamazoo, MI, University Arena","University Arena","Kalamazoo","MI","Michigan","Western Michigan",NA,"MAC","5,421","1957",-85.60845,42.2833
+"191","Daytona, FL, Moore Gymnasium","Moore Gymnasium","Daytona","FL","Florida","Bethune-Cookman",NA,"MEAC","3,000","1953[3]",-85.60845,42.2833
+"192","Baltimore, MD, Physical Education Complex","Physical Education Complex","Baltimore","MD","Maryland","Coppin State",NA,"MEAC","4,100","2009",-76.6568654,39.3156591
+"193","Dover, DE, Memorial Hall","Memorial Hall","Dover","DE","Delaware","Delaware State",NA,"MEAC","3,000","1982[4]",-75.5432382,39.187322
+"194","Tallahassee, FL, Teaching Gym","Teaching Gym","Tallahassee","FL","Florida","Florida A&M",NA,"MEAC","9,639","2009",-84.2905532,30.4242136
+"195","Washington, DC, Burr Gymnasium","Burr Gymnasium","Washington","DC","District of Columbia","Howard",NA,"MEAC","2,700","1963",-77.022094,38.9263793
+"196","Princess Anne, MD, Hytche Athletic Center","Hytche Athletic Center","Princess Anne","MD","Maryland","Maryland Eastern Shore",NA,"MEAC","5,500","1999[5]",-75.6872167,38.211371
+"197","Baltimore, MD, Talmadge L. Hill Field House","Talmadge L. Hill Field House","Baltimore","MD","Maryland","Morgan State",NA,"MEAC","4,250","1975[6]",-76.5852961,39.342424
+"198","Norfolk, VA, Joseph G. Echols Memorial Hall","Joseph G. Echols Memorial Hall","Norfolk","VA","Virginia","Norfolk State",NA,"MEAC","7,000","1982",-76.2582396,36.8480386
+"199","Greensboro, NC, Corbett Sports Center","Corbett Sports Center","Greensboro","NC","North Carolina","North Carolina A&T",NA,"MEAC","5,700","1978",-79.7690541,36.0767483
+"200","Durham, NC, McLendon–McDougald Gymnasium","McLendon–McDougald Gymnasium","Durham","NC","North Carolina","North Carolina Central",NA,"MEAC","3,056","1955",-78.8976153,35.975878
+"201","Savannah, GA, Tiger Arena","Tiger Arena","Savannah","GA","Georgia","Savannah State",NA,"MEAC[g]","6,000","2000",-81.0658947,32.0237904
+"202","Orangeburg, SC, SHM Memorial Center","SHM Memorial Center","Orangeburg","SC","South Carolina","South Carolina State",NA,"MEAC","3,200","1968",-80.846515,33.5010199
+"203","Peoria, IL, Carver Arena","Carver Arena","Peoria","IL","Illinois","Bradley men","Men","Missouri Valley","11,164","1982",-89.5942589,40.691985
+"204","Des Moines, IA, Knapp Center","Knapp Center","Des Moines","IA","Iowa","Drake",NA,"Missouri Valley","7,152","1992",-93.6521616,41.6046804
+"205","Evansville, IN, Ford Center","Ford Center","Evansville","IN","Indiana","Evansville",NA,"Missouri Valley","10,000","2011",-87.5678588,37.9721356
+"206","Normal, IL, Redbird Arena","Redbird Arena","Normal","IL","Illinois","Illinois State",NA,"Missouri Valley","10,200","1989",-88.9987999,40.5106898
+"207","Terre Haute, IN, Hulman Center","Hulman Center","Terre Haute","IN","Indiana","Indiana State",NA,"Missouri Valley","10,200","1973",-87.4051217,39.4685021
+"208","Chicago, IL, Joseph J. Gentile Arena","Joseph J. Gentile Arena","Chicago","IL","Illinois","Loyola (Chicago)",NA,"Missouri Valley","4,486","1996",-87.6591153,42.0006462
+"209","Springfield, MO, JQH Arena","JQH Arena","Springfield","MO","Missouri","Missouri State",NA,"Missouri Valley","11,000","2008",-93.28298,37.202005
+"210","Cedar Falls, IA, McLeod Center","McLeod Center","Cedar Falls","IA","Iowa","Northern Iowa",NA,"Missouri Valley","6,650","2006",-92.4672647,42.5143658
+"211","Carbondale, IL, SIU Arena","SIU Arena","Carbondale","IL","Illinois","Southern Illinois",NA,"Missouri Valley","8,339","1964",-89.2187116,37.7083282
+"212","Valparaiso, IN, Athletics–Recreation Center","Athletics–Recreation Center","Valparaiso","IN","Indiana","Valparaiso",NA,"Missouri Valley","5,000","1984",-87.0483582,41.4642298
+"213","Colorado Springs, CO, Clune Arena","Clune Arena","Colorado Springs","CO","Colorado","Air Force",NA,"Mountain West","5,858","1968",-104.8837735,39.0136037
+"214","Boise, ID, Taco Bell Arena","Taco Bell Arena","Boise","ID","Idaho","Boise State",NA,"Mountain West","12,480","1982",-116.198881,43.6035738
+"215","Fort Collins, CO, Moby Arena","Moby Arena","Fort Collins","CO","Colorado","Colorado State",NA,"Mountain West","8,745","1966",-105.0932246,40.5756843
+"216","Fresno, CA, Save Mart Center","Save Mart Center","Fresno","CA","California","Fresno State",NA,"Mountain West","15,544","2003",-119.7385011,36.809691
+"217","Reno, NV, Lawlor Events Center","Lawlor Events Center","Reno","NV","Nevada","Nevada",NA,"Mountain West","11,536","1983",-119.8182998,39.5450902
+"218","Albuquerque, NM, Dreamstyle Arena","Dreamstyle Arena","Albuquerque","NM","New Mexico","New Mexico",NA,"Mountain West","15,411","1966",-106.6322619,35.0670344
+"219","San Diego, CA, Viejas Arena","Viejas Arena","San Diego","CA","California","San Diego State",NA,"Mountain West","12,414","1997",-117.0746039,32.7738062
+"220","San Jose, CA, Event Center Arena","Event Center Arena","San Jose","CA","California","San Jose State",NA,"Mountain West","5,000","1989",-121.8800817,37.3352281
+"221","Paradise, NV, Thomas & Mack Center","Thomas & Mack Center","Paradise","NV","Nevada","UNLV men","Men","Mountain West","18,776","1983",-115.1451269,36.104119
+"222","Logan, UT, Smith Spectrum","Smith Spectrum","Logan","UT","Utah","Utah State",NA,"Mountain West","10,270","1968",-111.8119572,41.7476092
+"223","Laramie, WY, Arena-Auditorium","Arena-Auditorium","Laramie","WY","Wyoming","Wyoming",NA,"Mountain West","15,028","1982",-105.5694365,41.313341
+"224","Smithfield, RI, Chace Athletic Center","Chace Athletic Center","Smithfield","RI","Rhode Island","Bryant",NA,"Northeast","2,700","2001",-71.5394146,41.9211855
+"225","New Britain, CT, William H. Detrick Gymnasium","William H. Detrick Gymnasium","New Britain","CT","Connecticut","Central Connecticut",NA,"Northeast","2,654","1965",-72.764167,41.693255
+"226","Hackensack, NJ, Rothman Center","Rothman Center","Hackensack","NJ","New Jersey","Fairleigh Dickinson",NA,"Northeast","5,000","1987",-74.0323991,40.8967153
+"227","Brooklyn, NY, Wellness, Recreation & Athletics Center","Wellness, Recreation & Athletics Center","Brooklyn","NY","New York","LIU Brooklyn",NA,"Northeast","2,500","2006",-73.9794241,40.5758042
+"228","Emmitsburg, MD, Knott Arena","Knott Arena","Emmitsburg","MD","Maryland","Mount St. Mary's",NA,"Northeast","3,121","1987",-77.3461851,39.6796739
+"229","Pittsburgh, PA, UPMC Events Center[h]","UPMC Events Center[h]","Pittsburgh","PA","Pennsylvania","Robert Morris",NA,"Northeast","4,000","2019",-79.9622834,40.4438281
+"230","Fairfield, CT, William H. Pitt Center","William H. Pitt Center","Fairfield","CT","Connecticut","Sacred Heart",NA,"Northeast","2,062","1997",-73.2446525,41.2196387
+"231","Brooklyn, NY, Generoso Pope Athletic Complex","Generoso Pope Athletic Complex","Brooklyn","NY","New York","St. Francis Brooklyn",NA,"Northeast","1,200","1971",-73.9921652,40.6932301
+"232","Loretto, PA, DeGol Arena","DeGol Arena","Loretto","PA","Pennsylvania","Saint Francis (PA)",NA,"Northeast","3,500","1972",-78.6373747,40.5062359
+"233","Staten Island, NY, Spiro Sports Center","Spiro Sports Center","Staten Island","NY","New York","Wagner",NA,"Northeast","2,100","1999",-74.095729,40.6149664
+"234","Clarksville, TN, Dunn Center","Dunn Center","Clarksville","TN","Tennessee","Austin Peay",NA,"Ohio Valley","9,000","1975",-87.3566819,36.5363093
+"235","Nashville, TN, Curb Event Center","Curb Event Center","Nashville","TN","Tennessee","Belmont",NA,"Ohio Valley","5,085","2003",-86.7945579,36.132314
+"236","Charleston, IL, Lantz Arena","Lantz Arena","Charleston","IL","Illinois","Eastern Illinois",NA,"Ohio Valley","5,300","1967",-88.1788481,39.4803349
+"237","Richmond, KY, Alumni Coliseum","Alumni Coliseum","Richmond","KY","Kentucky","Eastern Kentucky",NA,"Ohio Valley","6,500","1963",-84.3012724,37.7373512
+"238","Jacksonville, AL, Pete Mathews Coliseum","Pete Mathews Coliseum","Jacksonville","AL","Alabama","Jacksonville State",NA,"Ohio Valley","5,300","1974",-85.7735038,33.8241586
+"239","Morehead, KY, Ellis Johnson Arena","Ellis Johnson Arena","Morehead","KY","Kentucky","Morehead State",NA,"Ohio Valley","6,500","1981",-83.4326841,38.1839705
+"240","Murray, KY, CFSB Center","CFSB Center","Murray","KY","Kentucky","Murray State",NA,"Ohio Valley","8,602","1998",-88.319923,36.622687
+"241","Cape Girardeau, MO, Show Me Center","Show Me Center","Cape Girardeau","MO","Missouri","Southeast Missouri State",NA,"Ohio Valley","6,972","1987",-89.5275416,37.3199939
+"242","Edwardsville, IL, Vadalabene Center","Vadalabene Center","Edwardsville","IL","Illinois","SIU Edwardsville",NA,"Ohio Valley","4,000","1984",-90.0001457,38.7958638
+"243","Martin, TN, Tom and Kathleen Elam Center","Tom and Kathleen Elam Center","Martin","TN","Tennessee","Tennessee-Martin",NA,"Ohio Valley","5,000","1969",-88.8680345,36.3435398
+"244","Nashville, TN, Gentry Complex","Gentry Complex","Nashville","TN","Tennessee","Tennessee State",NA,"Ohio Valley","10,500","1980",-86.8291415,36.1690985
+"245","Cookeville, TN, Eblen Center","Eblen Center","Cookeville","TN","Tennessee","Tennessee Tech",NA,"Ohio Valley","9,282","1977",-85.5095064,36.1783618
+"246","Tucson, AZ, McKale Center","McKale Center","Tucson","AZ","Arizona","Arizona",NA,"Pac-12","14,545","1973",-110.9460745,32.2303021
+"247","Tempe, AZ, Wells Fargo Arena","Wells Fargo Arena","Tempe","AZ","Arizona","Arizona State",NA,"Pac-12","10,754","1974",-111.9310057,33.4245048
+"248","Berkeley, CA, Haas Pavilion","Haas Pavilion","Berkeley","CA","California","California",NA,"Pac-12","11,877","1933",-122.2623099,37.8693878
+"249","Boulder, CO, CU Events Center","CU Events Center","Boulder","CO","Colorado","Colorado",NA,"Pac-12","11,064","1979",-105.2606052,40.0048315
+"250","Eugene, OR, Matthew Knight Arena","Matthew Knight Arena","Eugene","OR","Oregon","Oregon",NA,"Pac-12","12,369","2011",-123.0663109,44.0449193
+"251","Corvallis, OR, Gill Coliseum","Gill Coliseum","Corvallis","OR","Oregon","Oregon State",NA,"Pac-12","9,604","1949",-123.28071,44.5612886
+"252","Stanford, CA, Maples Pavilion","Maples Pavilion","Stanford","CA","California","Stanford",NA,"Pac-12","7,329","1969",-122.1606326,37.4296225
+"253","Los Angeles, CA, Pauley Pavilion","Pauley Pavilion","Los Angeles","CA","California","UCLA",NA,"Pac-12","13,800[7]","1965",-118.4469123,34.0703581
+"254","Los Angeles, CA, Galen Center","Galen Center","Los Angeles","CA","California","USC",NA,"Pac-12","10,258","2006",-118.2798811,34.0209836
+"255","Salt Lake City, UT, Jon M. Huntsman Center","Jon M. Huntsman Center","Salt Lake City","UT","Utah","Utah",NA,"Pac-12","15,000","1969",-111.8388029,40.7620609
+"256","Seattle, WA, Alaska Airlines Arena at Hec Edmundson Pavilion","Alaska Airlines Arena at Hec Edmundson Pavilion","Seattle","WA","Washington","Washington",NA,"Pac-12","10,000","1927",-122.3021385,47.6520749
+"257","Pullman, WA, Beasley Coliseum","Beasley Coliseum","Pullman","WA","Washington","Washington State",NA,"Pac-12","11,671","1973",-117.158085,46.735235
+"258","Washington, DC, Bender Arena","Bender Arena","Washington","DC","District of Columbia","American",NA,"Patriot","4,500","1988",-77.0899073,38.9377542
+"259","West Point, NY, Christl Arena","Christl Arena","West Point","NY","New York","Army",NA,"Patriot","5,043","1985",-73.9656782,41.3863864
+"260","Boston, MA, Agganis Arena","Agganis Arena","Boston","MA","Massachusetts","Boston University",NA,"Patriot","7,200","2005",-71.1177297,42.3521901
+"261","Lewisburg, PA, Sojka Pavilion","Sojka Pavilion","Lewisburg","PA","Pennsylvania","Bucknell",NA,"Patriot","4,000","2003",-76.8868827,40.9568332
+"262","Hamilton, NY, Cotterell Court","Cotterell Court","Hamilton","NY","New York","Colgate",NA,"Patriot","1,750","1959",-75.5427014,42.8153295
+"263","Worcester, MA, Hart Center","Hart Center","Worcester","MA","Massachusetts","Holy Cross",NA,"Patriot","3,600","1975",-71.8062758,42.234829
+"264","Easton, PA, Kirby Sports Center","Kirby Sports Center","Easton","PA","Pennsylvania","Lafayette",NA,"Patriot","3,500","1973",-75.209704,40.7018683
+"265","Bethlehem, PA, Stabler Arena","Stabler Arena","Bethlehem","PA","Pennsylvania","Lehigh",NA,"Patriot","6,000","1979",-75.357403,40.585281
+"266","Baltimore, MD, Reitz Arena","Reitz Arena","Baltimore","MD","Maryland","Loyola (Maryland)",NA,"Patriot","3,000","1984[8]",-76.6185933,39.3467998
+"267","Annapolis, MD, Alumni Hall","Alumni Hall","Annapolis","MD","Maryland","Navy",NA,"Patriot","5,710","1991",-76.4877359,38.9845155
+"268","Tuscaloosa, AL, Coleman Coliseum","Coleman Coliseum","Tuscaloosa","AL","Alabama","Alabama",NA,"SEC","15,383","1968",-87.5397911,33.2029888
+"269","Fayetteville, AR, Bud Walton Arena","Bud Walton Arena","Fayetteville","AR","Arkansas","Arkansas",NA,"SEC","19,368","1993",-94.1781382,36.0615904
+"270","Auburn, AL, Auburn Arena","Auburn Arena","Auburn","AL","Alabama","Auburn",NA,"SEC","9,121","2010",-85.4924955,32.6027517
+"271","Gainesville, FL, O'Connell Center","O'Connell Center","Gainesville","FL","Florida","Florida",NA,"SEC","12,000","1980",-82.3511181,29.6494769
+"272","Athens, GA, Stegeman Coliseum","Stegeman Coliseum","Athens","GA","Georgia","Georgia",NA,"SEC","10,523","1964",-83.3770446,33.9425109
+"273","Lexington, KY, Rupp Arena","Rupp Arena","Lexington","KY","Kentucky","Kentucky men[i]","Men","SEC","23,500","1976",-84.5022738,38.0486909
+"274","Baton Rouge, LA, Pete Maravich Assembly Center","Pete Maravich Assembly Center","Baton Rouge","LA","Louisiana","LSU",NA,"SEC","13,215","1972",-91.1846265,30.4142761
+"275","Oxford, MS, The Pavilion at Ole Miss","The Pavilion at Ole Miss","Oxford","MS","Mississippi","Mississippi",NA,"SEC","9,500","2016",-89.536016,34.3628353
+"276","Starkville, MS, Humphrey Coliseum","Humphrey Coliseum","Starkville","MS","Mississippi","Mississippi State",NA,"SEC","10,575","1975",-88.7940254,33.4614159
+"277","Columbia, MO, Mizzou Arena","Mizzou Arena","Columbia","MO","Missouri","Missouri",NA,"SEC","15,061","2004",-92.333753,38.9324614
+"278","Columbia, SC, Colonial Life Arena","Colonial Life Arena","Columbia","SC","South Carolina","South Carolina",NA,"SEC","18,000","2002",-81.0373112,33.9947688
+"279","Knoxville, TN, Thompson–Boling Arena","Thompson–Boling Arena","Knoxville","TN","Tennessee","Tennessee",NA,"SEC","21,678","1987",-83.9250359,35.9511794
+"280","College Station, TX, Reed Arena","Reed Arena","College Station","TX","Texas","Texas A&M",NA,"SEC","12,989","1998",-96.346293,30.605851
+"281","Nashville, TN, Memorial Gymnasium","Memorial Gymnasium","Nashville","TN","Tennessee","Vanderbilt",NA,"SEC","14,316","1952",-86.807313,36.1445375
+"282","Chattanooga, TN, McKenzie Arena","McKenzie Arena","Chattanooga","TN","Tennessee","Chattanooga",NA,"Southern","10,928","1982",-85.3009296,35.0503542
+"283","Charleston, SC, McAlister Field House","McAlister Field House","Charleston","SC","South Carolina","The Citadel",NA,"Southern","6,000","1939",-79.9623637,32.7985855
+"284","Johnson City, TN, Freedom Hall Civic Center","Freedom Hall Civic Center","Johnson City","TN","Tennessee","East Tennessee State",NA,"Southern","6,149","1974",-82.3748699,36.3243351
+"285","Greenville, SC, Timmons Arena","Timmons Arena","Greenville","SC","South Carolina","Furman",NA,"Southern","4,000","1998",-82.437289,34.9179345
+"286","Macon, GA, Hawkins Arena","Hawkins Arena","Macon","GA","Georgia","Mercer",NA,"Southern","3,500","2004",-83.6522972,32.8289933
+"287","Homewood, AL, Pete Hanna Center","Pete Hanna Center","Homewood","AL","Alabama","Samford",NA,"Southern","4,974","2007",-86.7971667,33.4638283
+"288","Greensboro, NC, Greensboro Coliseum","Greensboro Coliseum","Greensboro","NC","North Carolina","UNC Greensboro",NA,"Southern","7,613","1959",-79.826131,36.058682
+"289","Lexington, VA, Cameron Hall","Cameron Hall","Lexington","VA","Virginia","VMI",NA,"Southern","5,800","1981",-79.4365995,37.7885432
+"290","Cullowhee, NC, Ramsey Center","Ramsey Center","Cullowhee","NC","North Carolina","Western Carolina",NA,"Southern","7,826","1986",-83.1822316,35.3036886
+"291","Spartanburg, SC, Jerry Richardson Indoor Stadium","Jerry Richardson Indoor Stadium","Spartanburg","SC","South Carolina","Wofford",NA,"Southern","3,400","2017",-81.9336288,34.9634256
+"292","Abilene, TX, Moody Coliseum","Moody Coliseum","Abilene","TX","Texas","Abilene Christian",NA,"Southland","4,600","1968",-99.7092098,32.4703736
+"293","Conway, AR, Farris Center","Farris Center","Conway","AR","Arkansas","Central Arkansas",NA,"Southland","6,000","1972",-92.4595759,35.0814748
+"294","Houston, TX, Sharp Gymnasium","Sharp Gymnasium","Houston","TX","Texas","Houston Baptist",NA,"Southland","1,000","1963[9]",-95.5167353,29.6949025
+"295","San Antonio, TX, McDermott Center","McDermott Center","San Antonio","TX","Texas","Incarnate Word",NA,"Southland","2,000","1989",-98.4694139,29.4681469
+"296","Beaumont, TX, Montagne Center","Montagne Center","Beaumont","TX","Texas","Lamar",NA,"Southland","10,746","1984",-94.0708128,30.0439428
+"297","Lake Charles, LA, Health and Human Performance Education Complex","Health and Human Performance Education Complex","Lake Charles","LA","Louisiana","McNeese State",NA,"Southland","4,200","2018",-93.2143063,30.1707657
+"298","New Orleans, LA, Lakefront Arena","Lakefront Arena","New Orleans","LA","Louisiana","New Orleans",NA,"Southland","8,933","1983",-90.0505073,30.0301443
+"299","Thibodaux, LA, Stopher Gymnasium","Stopher Gymnasium","Thibodaux","LA","Louisiana","Nicholls State",NA,"Southland","3,800","1967[10]",-90.8010571,29.7922413
+"300","Natchitoches, LA, Prather Coliseum","Prather Coliseum","Natchitoches","LA","Louisiana","Northwestern State",NA,"Southland","3,900","1964",-93.0951837,31.7440808
+"301","Huntsville, TX, Bernard Johnson Coliseum","Bernard Johnson Coliseum","Huntsville","TX","Texas","Sam Houston State",NA,"Southland","6,100","1976",-95.5462159,30.7129318
+"302","Hammond, LA, University Center","University Center","Hammond","LA","Louisiana","Southeastern Louisiana",NA,"Southland","7,500","1982",-90.4731213,30.5201614
+"303","Nacogdoches, TX, William R. Johnson Coliseum","William R. Johnson Coliseum","Nacogdoches","TX","Texas","Stephen F. Austin",NA,"Southland","7,203","1974",-94.6408378,31.6222968
+"304","Corpus Christi, TX, American Bank Center Arena[j]","American Bank Center Arena[j]","Corpus Christi","TX","Texas","Texas A&M-Corpus Christi",NA,"Southland","8,000","2004",-97.393558,27.808598
+"305","Denver, CO, Magness Arena","Magness Arena","Denver","CO","Colorado","Denver",NA,"Summit","7,200","1999",-104.9619325,39.6821385
+"306","Grand Forks, ND, Betty Engelstad Sioux Center","Betty Engelstad Sioux Center","Grand Forks","ND","North Dakota","North Dakota",NA,"Summit","3,300","2004",-97.0714417,47.9275954
+"307","Fargo, ND, Scheels Center","Scheels Center","Fargo","ND","North Dakota","North Dakota State",NA,"Summit","5,700","2016",-96.799031,46.900447
+"308","Omaha, NE, Baxter Arena","Baxter Arena","Omaha","NE","Nebraska","Omaha",NA,"Summit","7,500[11]","2015",-96.012948,41.236186
+"309","Tulsa, OK, Mabee Center","Mabee Center","Tulsa","OK","Oklahoma","Oral Roberts",NA,"Summit","10,554","1972",-95.9557684,36.0480386
+"310","Fort Wayne, IN, Hilliard Gates Sports Center","Hilliard Gates Sports Center","Fort Wayne","IN","Indiana","Purdue Fort Wayne",NA,"Summit","2,300","1981",-85.107348,41.1194073
+"311","Vermillion, SD, Sanford Coyote Sports Center","Sanford Coyote Sports Center","Vermillion","SD","South Dakota","South Dakota",NA,"Summit","6,000","2016",-96.927792,42.7903588
+"312","Brookings, SD, Frost Arena","Frost Arena","Brookings","SD","South Dakota","South Dakota State",NA,"Summit","6,500","1973",-96.7791265,44.318304
+"313","Macomb, IL, Western Hall","Western Hall","Macomb","IL","Illinois","Western Illinois",NA,"Summit","5,139","1964",-90.6850172,40.4714189
+"314","Boone, NC, George M. Holmes Convocation Center","George M. Holmes Convocation Center","Boone","NC","North Carolina","Appalachian State",NA,"Sun Belt","8,325","2000",-81.6758447,36.2106995
+"315","Jonesboro, AR, First National Bank Arena","First National Bank Arena","Jonesboro","AR","Arkansas","Arkansas State",NA,"Sun Belt","10,563","1987",-90.6703325,35.8453929
+"316","Conway, SC, HTC Center","HTC Center","Conway","SC","South Carolina","Coastal Carolina",NA,"Sun Belt","3,600","2012",-79.0155812,33.7990172
+"317","Statesboro, GA, Hanner Fieldhouse","Hanner Fieldhouse","Statesboro","GA","Georgia","Georgia Southern",NA,"Sun Belt","4,325[12]","1969",-81.7788709,32.4276074
+"318","Atlanta, GA, GSU Sports Arena","GSU Sports Arena","Atlanta","GA","Georgia","Georgia State",NA,"Sun Belt","3,854[13]","1973",-84.3864553,33.7516267
+"319","Little Rock, AR, Jack Stephens Center","Jack Stephens Center","Little Rock","AR","Arkansas","Little Rock",NA,"Sun Belt","5,600","2005",-92.3404998,34.7283805
+"320","Lafayette, LA, Cajundome","Cajundome","Lafayette","LA","Louisiana","Louisiana",NA,"Sun Belt","13,500","1985",-92.03887,30.218448
+"321","Monroe, LA, Fant–Ewing Coliseum","Fant–Ewing Coliseum","Monroe","LA","Louisiana","Louisiana–Monroe",NA,"Sun Belt","7,085","1971",-92.0694529,32.5310638
+"322","Mobile, AL, Mitchell Center","Mitchell Center","Mobile","AL","Alabama","South Alabama",NA,"Sun Belt","10,041","1998",-88.1796239,30.6920191
+"323","Arlington, TX, College Park Center","College Park Center","Arlington","TX","Texas","Texas-Arlington",NA,"Sun Belt","7,000","2012",-97.1080623,32.7303774
+"324","San Marcos, TX, Strahan Coliseum","Strahan Coliseum","San Marcos","TX","Texas","Texas State",NA,"Sun Belt","7,200","1982",-97.9326233,29.8885435
+"325","Troy, AL, Trojan Arena","Trojan Arena","Troy","AL","Alabama","Troy",NA,"Sun Belt","5,200[14]","2012",-85.9523887,31.8022455
+"326","Normal, AL, Elmore Gymnasium","Elmore Gymnasium","Normal","AL","Alabama","Alabama A&M",NA,"SWAC","6,000","1973[15]",-86.5754355,34.7854354
+"327","Montgomery, AL, Dunn–Oliver Acadome","Dunn–Oliver Acadome","Montgomery","AL","Alabama","Alabama State",NA,"SWAC","7,400","1992",-86.2931585,32.361776
+"328","Lorman, MS, Davey Whitney Complex","Davey Whitney Complex","Lorman","MS","Mississippi","Alcorn State",NA,"SWAC","7,000","1975",-91.1333164,31.873366
+"329","Pine Bluff, AR, K. L. Johnson Complex","K. L. Johnson Complex","Pine Bluff","AR","Arkansas","Arkansas-Pine Bluff",NA,"SWAC","4,500","1982",-92.0031955,34.2284312
+"330","Grambling, LA, Fredrick C. Hobdy Assembly Center","Fredrick C. Hobdy Assembly Center","Grambling","LA","Louisiana","Grambling",NA,"SWAC","7,500","2007",-92.7237273,32.5204266
+"331","Jackson, MS, Williams Assembly Center","Williams Assembly Center","Jackson","MS","Mississippi","Jackson State",NA,"SWAC","8,000","1981",-90.2119454,32.2997878
+"332","Itta Bena, MS, Harrison HPER Complex","Harrison HPER Complex","Itta Bena","MS","Mississippi","Mississippi Valley State",NA,"SWAC","5,000","1970[16]",-90.3198067,33.49512
+"333","Prairie View, TX, William J. Nicks Building","William J. Nicks Building","Prairie View","TX","Texas","Prairie View A&M",NA,"SWAC","6,500","1968[17]",-95.9930554,30.0922526
+"334","Baton Rouge, LA, F. G. Clark Center","F. G. Clark Center","Baton Rouge","LA","Louisiana","Southern",NA,"SWAC","7,500","1975",-91.1855935,30.5219199
+"335","Houston, TX, Health and Physical Education Arena","Health and Physical Education Arena","Houston","TX","Texas","Texas Southern",NA,"SWAC","8,100","1989",-95.3655607,29.7229357
+"336","Provo, UT, Marriott Center","Marriott Center","Provo","UT","Utah","BYU",NA,"West Coast","19,000","1971",-111.6492988,40.254122
+"337","Spokane, WA, McCarthey Athletic Center","McCarthey Athletic Center","Spokane","WA","Washington","Gonzaga",NA,"West Coast","6,000","2004",-117.3991768,47.6653837
+"338","Los Angeles, CA, Gersten Pavilion","Gersten Pavilion","Los Angeles","CA","California","Loyola Marymount",NA,"West Coast","4,156","1981",-118.4156096,33.967663
+"339","Stockton, CA, Alex G. Spanos Center","Alex G. Spanos Center","Stockton","CA","California","Pacific",NA,"West Coast","6,150","1981",-121.3151352,37.9767312
+"340","Malibu, CA, Firestone Fieldhouse","Firestone Fieldhouse","Malibu","CA","California","Pepperdine",NA,"West Coast","3,104","1973",-118.7096946,34.0385192
+"341","Portland, OR, Chiles Center","Chiles Center","Portland","OR","Oregon","Portland",NA,"West Coast","4,852","1984",-122.7285261,45.5750973
+"342","Moraga, CA, McKeon Pavilion","McKeon Pavilion","Moraga","CA","California","Saint Mary's",NA,"West Coast","3,500","1978",-122.1064498,37.8412834
+"343","San Diego, CA, Jenny Craig Pavilion","Jenny Craig Pavilion","San Diego","CA","California","San Diego",NA,"West Coast","5,100","2000",-117.1837806,32.7744376
+"344","San Francisco, CA, War Memorial Gymnasium","War Memorial Gymnasium","San Francisco","CA","California","San Francisco",NA,"West Coast","5,300","1958",-122.4495105,37.7768745
+"345","Santa Clara, CA, Leavey Center","Leavey Center","Santa Clara","CA","California","Santa Clara",NA,"West Coast","4,500","1975",-121.9351697,37.3491535
+"346","Bakersfield, CA, Icardo Center","Icardo Center","Bakersfield","CA","California","Cal State Bakersfield",NA,"WAC[k]","3,800","1989",-119.1026945,35.3475694
+"347","Riverside, CA, CBU Events Center","CBU Events Center","Riverside","CA","California","California Baptist",NA,"WAC","5,050[18]","2017",-117.4223116,33.9268345
+"348","Chicago, IL, Emil and Patricia Jones Convocation Center","Emil and Patricia Jones Convocation Center","Chicago","IL","Illinois","Chicago State",NA,"WAC","7,000","2007",-87.6084284,41.7165542
+"349","Phoenix, AZ, GCU Arena","GCU Arena","Phoenix","AZ","Arizona","Grand Canyon",NA,"WAC","7,500","2011",-112.128912,33.5102029
+"350","Las Cruces, NM, Pan American Center","Pan American Center","Las Cruces","NM","New Mexico","New Mexico State",NA,"WAC","12,482","1968",-106.7421707,32.2836754
+"351","Seattle, WA, Redhawk Center","Redhawk Center","Seattle","WA","Washington","Seattle",NA,"WAC","999","1959",-122.31344,47.6075105
+"352","Kansas City, MO, Municipal Auditorium","Municipal Auditorium","Kansas City","MO","Missouri","UMKC men","Men","WAC","9,987","1936",-94.586341,39.09787
+"353","Orem, UT, UCCU Center","UCCU Center","Orem","UT","Utah","Utah Valley",NA,"WAC","8,500","1996",-111.7170346,40.2786424
+"354","Edinburg, TX, UTRGV Fieldhouse","UTRGV Fieldhouse","Edinburg","TX","Texas","UTRGV",NA,"WAC","2,500","1969",-98.1698007,26.3067326
+"355","Chapel Hill, NC, Carmichael Arena","Carmichael Arena","Chapel Hill","NC","North Carolina","North Carolina women","Women","ACC","8,010","1965",-79.0454614,35.9095693
+"356","Raleigh, NC, Reynolds Coliseum","Reynolds Coliseum","Raleigh","NC","North Carolina","North Carolina State women","Women","ACC","9,500","1949",-78.669835,35.783648
+"357","Memphis, TN, Elma Roane Fieldhouse","Elma Roane Fieldhouse","Memphis","TN","Tennessee","Memphis women","Women","The American","2,565","1951",-89.9359381,35.1182938
+"358","Wichita, KS, Intrust Bank Arena","Intrust Bank Arena","Wichita","KS","Kansas","Wichita State men","Men","The American","15,004","2010",-97.3320351,37.6833635
+"359","Philadelphia, PA, McGonigle Hall","McGonigle Hall","Philadelphia","PA","Pennsylvania","Temple women","Women","The American","3,900","1969",-75.1580357,39.9810622
+"360","Hartford, CT, XL Center","XL Center","Hartford","CT","Connecticut","Connecticut",NA,"The American","16,294","1975",-72.6769853,41.768399
+"361","Milwaukee, WI, Al McGuire Center","Al McGuire Center","Milwaukee","WI","Wisconsin","Marquette women","Women","Big East","4,000","2004",-87.9269242,43.039606
+"362","Providence, RI, Alumni Hall","Alumni Hall","Providence","RI","Rhode Island","Providence women","Women","Big East","2,620","1955",-71.4368009,41.8461239
+"363","Omaha, NE, D. J. Sokol Arena","D. J. Sokol Arena","Omaha","NE","Nebraska","Creighton women","Women","Big East","2,950","2009",-95.9404169,41.2661264
+"364","Queens, NY, Carnesecca Arena","Carnesecca Arena","Queens","NY","New York","St. John's women","Women","Big East","5,602","1961",-73.7945776,40.7241294
+"365","Washington, DC, McDonough Gymnasium","McDonough Gymnasium","Washington","DC","District of Columbia","Georgetown women","Women","Big East","2,500","1951",-77.0774817,38.9076379
+"366","South Orange, NJ, Walsh Gymnasium","Walsh Gymnasium","South Orange","NJ","New Jersey","Seton Hall women","Women","Big East","2,600","1939",-74.2452536,40.741524
+"367","Philadelphia, PA, Wells Fargo Center","Wells Fargo Center","Philadelphia","PA","Pennsylvania","Villanova men","Men","Big East","20,318","1996",-75.1636658,39.949358
+"368","Moscow, ID, Memorial Gymnasium","Memorial Gymnasium","Moscow","ID","Idaho","Idaho Vandals",NA,"Big Sky","2,500","1928",-117.0139153,46.7265482
+"369","Pocatello, ID, Reed Gym","Reed Gym","Pocatello","ID","Idaho","Idaho State women","Women","Big Sky","3,214","1951",-112.4283349,42.8656051
+"370","North Charleston, SC, North Charleston Coliseum","North Charleston Coliseum","North Charleston","SC","South Carolina","Charleston Southern",NA,"Big South","11,475","1993",-80.0223438,32.8656466
+"371","Boston, MA, Cabot Center","Cabot Center","Boston","MA","Massachusetts","Northeastern women","Women","Colonial","2,500","1954",-71.0896831,42.3393419
+"372","Indianapolis, IN, The Jungle","The Jungle","Indianapolis","IN","Indiana","IUPUI women","Women","Horizon","1,215","1982",-86.1234625,39.7660883
+"373","Green Bay, WI, Kress Events Center","Kress Events Center","Green Bay","WI","Wisconsin","Green Bay women","Women","Horizon","4,018","2007",-87.9164501,44.5299675
+"374","Milwaukee, WI, Klotsche Center","Klotsche Center","Milwaukee","WI","Wisconsin","Milwaukee women","Women","Horizon","3,500","1977",-87.8796776,43.0795057
+"375","Loudonville, NY, Alumni Recreation Center","Alumni Recreation Center","Loudonville","NY","New York","Siena women","Women","Metro Atlantic","4,000","1974",-73.6767568,42.7284324
+"376","Peoria, IL, Renaissance Coliseum","Renaissance Coliseum","Peoria","IL","Illinois","Bradley women","Women","Missouri Valley","4,200","2010",-89.6178075,40.6990649
+"377","Paradise, NV, Cox Pavilion","Cox Pavilion","Paradise","NV","Nevada","UNLV women","Women","Mountain West","2,500","2001",-115.143247,36.104244
+"378","Boston, MA, Case Gym","Case Gym","Boston","MA","Massachusetts","Boston University",NA,"Patriot","1,800","1972",-71.1205462,42.3542903
+"379","Lexington, KY, Memorial Coliseum","Memorial Coliseum","Lexington","KY","Kentucky","Kentucky women","Women","SEC","8,000","1950",-84.5005112,38.0394389
+"380","Greensboro, NC, Fleming Gymnasium","Fleming Gymnasium","Greensboro","NC","North Carolina","UNC Greensboro women","Women","Southern","2,320","1989",-79.8128788,36.0693429
+"381","Corpus Christi, TX, Dugan Wellness Center","Dugan Wellness Center","Corpus Christi","TX","Texas","Texas A&M–Corpus Christi Islanders",NA,"Southland","1,200","2008",-97.3244846,27.7112333
+"382","Lafayette, LA, Earl K. Long Gymnasium","Earl K. Long Gymnasium","Lafayette","LA","Louisiana","Louisiana women","Women","Sun Belt","1,500","1939",-92.018978,30.2113668
+"383","Seattle, WA, KeyArena","KeyArena","Seattle","WA","Washington","Seattle Redhawks men's basketball","Men","WAC","17,062","1962",-122.353988,47.6221
+"384","Bakersfield, CA, Rabobank Arena","Rabobank Arena","Bakersfield","CA","California","Cal State Bakersfield",NA,"WAC","9,333","1998",-119.012967,35.372296
+"385","Kansas City, MO, Swinney Recreation Center","Swinney Recreation Center","Kansas City","MO","Missouri","UMKC women","Women","WAC","1,500","1940",-94.5787546,39.0353618
