@@ -101,9 +101,11 @@ while (sum(is.na(lat_arr)) > 0 & sum(is.na(lon_arr)) > 0)
 
 # need to insert a conditional clause that stops loop after 50 failures
 # actual value is (-85.60845,42.283372)
+#%>% replace_na(list(lat_arr = "-85.60845"))
+#%>% replace_na(list(lon_arr = "42.283372"))
 
-ncaa_venues$Lat <- lat_arr #%>% replace_na(list(lat_arr = "-85.60845"))
-ncaa_venues$Lon <- lon_arr #%>% replace_na(list(lon_arr = "42.283372"))
+ncaa_venues$Lat <- lat_arr 
+ncaa_venues$Lon <- lon_arr 
 
 
 
