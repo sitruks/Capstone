@@ -19,7 +19,7 @@ library(tidyr)
 #### Task 0
 Load Data into RStudio
 ```{r}
-refine <- tbl_df(read_csv("C:/Users/v-kursan/Downloads/Capstone_DS/Wrangle/1_Basic_Data_Manipulation/refine_original.csv"))
+refine <- tbl_df(read_csv("C:/Users/v-kursan/Downloads/Capstone_DS/Reporting/Wrangle/1_Basic_Data_Manipulation/refine_original.csv"))
 ```
 
 

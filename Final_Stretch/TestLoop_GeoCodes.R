@@ -1,14 +1,12 @@
-'''
-This script pulls lat and lon coordinates for all game venues using
-ggmap Google map APIs
 
-Date: 2018/09/11
-'''
+#This script pulls lat and lon coordinates for all game venues using ggmap Google map APIs
 
 library(tidyverse)
 library(ggmap)
 library(naniar)
 options(max.print = 1000000)
+
+#https://en.wikipedia.org/wiki/List_of_NCAA_Men%27s_Division_I_Basketball_Tournament_venues
 
 #TourneyVenues data clean
 TourneyVenues <- read_csv("Data/TourneyVenues.csv")

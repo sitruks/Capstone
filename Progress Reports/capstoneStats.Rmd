@@ -17,13 +17,19 @@ In order to make sense of the data, I need to first explore it (InitialVisualiza
 
 Immediately, I was reminded of the discrepancies in tournament play over time, namely the total field change from 32 to 64 in 1985. One team was added to the mix in 2001. In the 2011 season 4 teams were added -- solidifying the current (2018) 68-team tournament. As such, properly filtering out data pre-XXXX will be an important item to consider. 
 
-The 
+In addition, accurate team locations (latitude and longitude) is essential to proving my hypothesis. No such information is available, so I will need to write a script to pull the coordinates. The ggmap package fulfils this need. 
+
+Also there is a wealth of regular season data, the model should be first built on the tournament data before expanding.
 
 ### **Apply Statistics**
 
 ### **Interesting Findings**
 
+The __ conference has the most titles over time.
+Since 1985, the __ seed has the highest winning percentage.
+
 
 ### **Actions**
+The ggmap package, though accurate, incurred an error best described as a time-out between calls. As such, a loop will need to be developed to manageably pull this information. For this case, a while loop should suffice.
 
-
+The other thing that became apparent was a need to compute distances between related coordinates. The geosphere package is a good solution for this. Further testing may be required on this package.
