@@ -39,6 +39,49 @@ venues_all <- read_csv("Data/Venues_all_w_Coords.csv")
 #lapply(NCAA_Data, unique) #every column detail... 
 
 ###cleaning for joins
+
+
+#### make file for all ncaa venue addresses, not just the tourney. 
+#### to be leveraged for determining proximity from home site.
+###options(max.print = 1000000)
+###
+###ncaa_venues_test <- read_csv("Data/Venues_All.csv")
+###
+###lat_arr <- rep(NA,length(ncaa_venues_test$Address))
+###lon_arr <- rep(NA,length(ncaa_venues_test$Address))
+###
+###i = 1
+###
+###while (sum(is.na(lat_arr)) > 0 & sum(is.na(lon_arr)) > 0)
+###  
+###{
+###  if (is.na(lat_arr[i])){
+###    print (i)
+###    address <- ncaa_venues$Address[i]
+###    latlon <- geocode(address)
+###    lat_arr[i] <- latlon[[1]]
+###    lon_arr[i] <- latlon[[2]]
+###  }
+###  
+###  i <- i + 1
+###  
+###  if (i > length(ncaa_venues$Address)){
+###    i <- 1
+###  }
+###}
+
+#### need to insert a conditional clause that stops loop after 50 failures
+#### actual value is (-85.60845,42.283372)
+####%>% replace_na(list(lat_arr = "-85.60845"))
+####%>% replace_na(list(lon_arr = "42.283372"))
+###
+###ncaa_venues$Lat <- lat_arr 
+###ncaa_venues$Lon <- lon_arr 
+###
+###write.csv(ncaa_venues,'Data/ncaa_venues.csv')
+
+
+
 seed_reg_cleaning <- seeds %>% mutate(Region = 
                                 if_else(grepl("^W", seeds$Seed), "W",
                                         if_else(grepl("^X", seeds$Seed), "X",
@@ -59,8 +102,6 @@ game_cities_cleaning <- gather(game_cities, `WTeamID`, `LTeamID`, key = "TeamID 
 tour_games_cleaning <- gather(tour_games, `WTeamID`, `LTeamID`, key = "TeamID Type", value = "TeamID") %>% 
   select(-DayNum, -`TeamID Type`)
 
-#teams_cleaning <- teams %>%  select(-FirstD1Season, -LastD1Season)
-
 venues_cleaning <- venues %>% 
   separate_rows(`Opening rounds`) %>% 
   separate_rows(Regionals) %>% 
@@ -72,55 +113,15 @@ tourney_venues <- gather(venues_cleaning, `Opening rounds`, Regionals, `Final Fo
 tourney_venues <- mutate(tourney_venues, Address_edit = tourney_venues$Address) %>% 
   separate(Address_edit, into = c("Tourney_City", "Tourney_State", "Tourney_Stadium"), sep = ",")
 tourney_venues$Tourney_State <- str_replace(tourney_venues$Tourney_State, "D.C.", "DC")
-tourney_venues$Tourney_State <-str_trim(tourney_venues$Tourney_State)
-tourney_venues$Tourney_Stadium <-str_trim(tourney_venues$Tourney_Stadium)
-stateCodes$State <-str_trim(stateCodes$State)
+tourney_venues$Tourney_State <- str_trim(tourney_venues$Tourney_State)
+tourney_venues$Tourney_Stadium <- str_trim(tourney_venues$Tourney_Stadium)
+stateCodes$State <- str_trim(stateCodes$State)
 
 tourney_venues2 <- left_join(tourney_venues, stateCodes, by = c("Tourney_State" = "State"))
-
-colnames(tourney_venues2) <- paste("Tourney", colnames(tourney_venues2), sep = "_")
-
-# make file for all ncaa venue addresses, not just the tourney. 
-# to be leveraged for determining proximity from home site.
-options(max.print = 1000000)
-
-ncaa_venues_test <- read_csv("Data/Venues_All.csv")
-
-lat_arr <- rep(NA,length(ncaa_venues_test$Address))
-lon_arr <- rep(NA,length(ncaa_venues_test$Address))
-
-i = 1
-
-while (sum(is.na(lat_arr)) > 0 & sum(is.na(lon_arr)) > 0)
-  
-{
-  if (is.na(lat_arr[i])){
-    print (i)
-    address <- ncaa_venues$Address[i]
-    latlon <- geocode(address)
-    lat_arr[i] <- latlon[[1]]
-    lon_arr[i] <- latlon[[2]]
-  }
-  
-  i <- i + 1
-  
-  if (i > length(ncaa_venues$Address)){
-    i <- 1
-  }
-}
-
-# need to insert a conditional clause that stops loop after 50 failures
-# actual value is (-85.60845,42.283372)
-#%>% replace_na(list(lat_arr = "-85.60845"))
-#%>% replace_na(list(lon_arr = "42.283372"))
-
-ncaa_venues$Lat <- lat_arr 
-ncaa_venues$Lon <- lon_arr 
-
-write.csv(ncaa_venues,'Data/ncaa_venues.csv')
+setnames(tourney_venues2, old = c("Address","Lat", "Lon", "Round", "Round Year", "Postal.code"), 
+         new = c("Tourney_Address", "Tourney_Lat", "Tourney_Lon", "Tourney_Round", "Tourney_Round_Year", "Tourney_Postal_Code"))
 
 ##edit venues_all to elicit team id number
-venues_all <- read_csv("Data/Venues_all_w_Coords.csv")
 venues_all <- mutate(venues_all, Team_Match = venues_all$Team)
 venues_all$Team_Match <- tolower(venues_all$Team_Match)
 venues_all$Team_Match <- gsub(" men", "", venues_all$Team_Match)
@@ -136,9 +137,12 @@ venues_all$Team_Match <- str_replace(venues_all$Team_Match, "purdue fort wayne",
 venues_all$Team_Match <- str_replace(venues_all$Team_Match, "louisiana–monroe", "louisiana-monroe")
 venues_all$Team_Match <- str_replace(venues_all$Team_Match, "texas a&m–corpus christi islanders", "texas a&m-corpus christi")
 venues_all$Team_Match <- str_replace(venues_all$Team_Match, "idaho vandals", "idaho") 
-colnames(venues_all) <- paste("Home", colnames(venues_all), sep = "_")
+setnames(tourney_venues2, old = c("Address","Lat", "Lon", "Round", "Round Year", "Postal.code"), 
+         new = c("Tourney_Address", "Tourney_Lat", "Tourney_Lon", "Tourney_Round", "Tourney_Round_Year", "Tourney_Postal_Code"))
 
-venues_all_id <- left_join(venues_all, teams_spellings, by = c("Home_Team_Match"="TeamNameSpelling"))
+home_venues_all <- left_join(venues_all, teams_spellings, by = c("Home_Team_Match"="TeamNameSpelling"))
+
+#colnames(venues_all) <- paste("Home", colnames(venues_all), sep = "_")
 #setnames(venues_all_id, old = c("Lat", "Lon"), new = c("Home_Lat", "Home_Lon"))
 
 

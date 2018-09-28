@@ -13,13 +13,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### **Explore Data**
 
-In order to make sense of the data, I need to first explore it (InitialVisualization_Capstone.R).
+In order to make sense of the data, I first explored it (InitialVisualization_Capstone.R).
 
 Immediately, I was reminded of the discrepancies in tournament play over time, namely the total field change from 32 to 64 in 1985. One team was added to the mix in 2001. In the 2011 season 4 teams were added -- solidifying the current (2018) 68-team tournament. As such, properly filtering out data pre-XXXX will be an important item to consider. 
 
 In addition, accurate team locations (latitude and longitude) is essential to proving my hypothesis. No such information is available, so I will need to write a script to pull the coordinates. The ggmap package fulfils this need. 
 
 Also there is a wealth of regular season data, the model should be first built on the tournament data before expanding.
+
+The venue data that was sourced includes specific stadiums unique to ncaa women's teams, and needs to be filtered 
 
 ### **Apply Statistics**
 
