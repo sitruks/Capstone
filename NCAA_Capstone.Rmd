@@ -49,6 +49,8 @@ seas_compact_res <- read.csv("Data/RegularSeasonCompactResults.csv")
 
 seas_detail_res <- read.csv("Data/RegularSeasonDetailedResults.csv")
 
+new_master_file <- read.csv("Data/df11.csv")
+
 ```
 ## Data Exploration
 
@@ -65,6 +67,7 @@ head(tour_compact_res,n=5)
 head(tour_detail_res,n=5)
 head(seas_compact_res,n=5)
 head(seas_detail_res,n=5)
+head(new_master_file,n=5)
 
 
 ```
@@ -72,11 +75,17 @@ head(seas_detail_res,n=5)
 We are interested to train a model to predict tournment win/lose
 and randomize the winner and loser team into team 1 and 2 and we calculate the probability of team 1 wins.  We randomize winning and losing team into team 1 and team 2 (necessary for probabilities later) and drop other ids
 ```{r}
-rand_tourn_res <- tour_compact_res %>% select(Season,DayNum,WTeamID,LTeamID) %>% mutate(rand = runif(dim(tour_compact_res)[1]), 
+rand_tourn_res <- tour_compact_res %>% select(Season,DayNum,WTeamID,LTeamID) %>% mutate(rand = runif(dim(tour_compact_res)[1]),
          team1id = ifelse(rand >= 0.5, WTeamID, LTeamID),
          team2id = ifelse(rand <0.5, WTeamID, LTeamID),
-         team1win = ifelse(team1id == WTeamID, 1, 0)) %>% 
+         team1win = ifelse(team1id == WTeamID, 1, 0)) %>%
   select(-rand, -WTeamID,-LTeamID)
+
+# rand_tourn_res <- new_master_file %>% select(Season,DayNum,WTeamID,LTeamID,Distance) %>% mutate(rand = runif(dim(tour_compact_res)[1]),
+#          team1id = ifelse(rand >= 0.5, WTeamID, LTeamID),
+#          team2id = ifelse(rand <0.5, WTeamID, LTeamID),
+#          team1win = ifelse(team1id == WTeamID, 1, 0)) %>%
+#   select(-rand, -WTeamID,-LTeamID)
 
 ```
 Then we add seeding information to games as seeding can be an important predictor
@@ -164,6 +173,17 @@ names(model_df) <- gsub('.x','_t1',names(model_df))
 names(model_df) <- gsub('.y','_t2',names(model_df))
 
 ```
+Add distance metrics to model_df by merging 
+```{r}
+model_df <- merge(x=model_df,y=new_master_file%>%select('Season','DayNum','TeamID','Distance'),by.x = c('Season','D_t2Num','team1id'),by.y=c('Season','DayNum','TeamID'),all.x=TRUE)
+
+model_df <- merge(x=model_df,y=new_master_file%>%select('Season','DayNum','TeamID','Distance'),by.x = c('Season','D_t2Num','team2id'),by.y=c('Season','DayNum','TeamID'),all.x=TRUE)
+
+# Rename the stats columns with extension _t1 and _t2 to stand for team1 and team2's stats
+names(model_df) <- gsub('.x','_t1',names(model_df))
+names(model_df) <- gsub('.y','_t2',names(model_df))
+```
+
 ## Visualization plots
 ```{r warning=TRUE}
 
