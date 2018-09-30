@@ -187,11 +187,8 @@ names(model_df) <- gsub('.y','_t2',names(model_df))
 ## Visualization plots
 ```{r warning=TRUE}
 
-# g1 <- predictors_all %>%
-#     ggplot(aes(x = FGP, fill = Res)) +
-#     geom_density(alpha = 0.7) +
-#     scale_fill_manual(values = c('darkblue', 'grey')) + 
-#     labs(x = 'Field goal %', y = '', title = 'Field Goal Shooting')
+model_df$team1win <- as.factor(model_df$team1win)
+ggplot(model_df,aes(x=team1win, y=Distance_t1,fill=team1win))+geom_boxplot()
 
 ```
 ```{r}
