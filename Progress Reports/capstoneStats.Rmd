@@ -25,11 +25,30 @@ The venue data that was sourced includes specific stadiums unique to ncaa women'
 
 ### **Apply Statistics**
 
+```{r, include=FALSE}
+df11 <- read_csv("Data/df11.csv")
+ncaa_table <- data.table(df11)
+
+e1 <- ncaa_table %>%
+  select(Season, Seeding, Home_Team_Match, TeamID) %>% 
+  unique() %>%
+  filter(Season %in% (2007:2017)) %>%
+  filter(Seeding == 1) %>% 
+  group_by(Home_Team_Match) %>% 
+  tally() %>% 
+  top_n (n = 10) %>% 
+  arrange(desc(n))
+```
+
+#### **stats 1**
+```{r}
+print(e1)
+```
+
 ### **Interesting Findings**
 
-The __ conference has the most titles over time.
-Since 1985, the __ seed has the highest winning percentage.
-
+Duke, North Carolina, and Kansas are tied 13 for most overall number one seeds.
+Since 1985, Duke has the most overall wins, therefore not surprisingly the most championship titles (5) in the tournament.
 
 ### **Actions**
 The ggmap package, though accurate, incurred an error best described as a time-out between calls. As such, a loop will need to be developed to manageably pull this information. For this case, a while loop should suffice.

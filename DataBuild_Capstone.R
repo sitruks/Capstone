@@ -103,8 +103,22 @@ df9 <- select(df8,-c(TeamNameSpelling, "TeamID Type.y", Home_X1, X1)) %>%
 df10 <- 
   filter(df9, `Home_Gender Distinction` != "Women" | is.na(df9$`Home_Gender Distinction`)) %>% 
   select(-`Home_Gender Distinction`)
+df11$Home_Address <- str_replace(df11$Home_Address, "\\[[:alpha:]\\]", "")
+#df11$Home_Address <- str_replace(df11$Home_Address, "\\<[:alpha:]|[:punct:]\\>", "")
+df11$Home_Arena <- str_replace(df11$Home_Arena, "\\[[:alpha:]\\]", "")
+df11$Home_Arena <- str_replace(df11$Home_Arena, "\\[[:alpha:]\\]", "")
+df11$Home_Team <- str_replace(df11$Home_Team, "\\[[:alpha:]\\]", "")
+df11$Home_Capacity <- str_replace(df11$Home_Capacity, "\\[[:digit:]\\]", "")
+
+#alternate data cleaning attempt
+###setkey(ncaa_table, Season, DayNum)
+###length(unique(ncaa_table$Home_Team))
+###
+###e1 <- ncaa_table[, top_seed := as.numeric(Seeding) == 1][, sum(top_seed), by = Home_Team][order(V1, decreasing = TRUE)][1:10,]
+
+
 
 ### write master
-write.csv(df9,'Data/df9.csv')
-write.csv(df10,'Data/df10.csv')
+write.csv(df11,'Data/df11.csv')
+
 write.csv(tourney_venues2,'Data/tourney_venues2.csv')

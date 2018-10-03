@@ -91,6 +91,9 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -127,16 +130,33 @@ $(document).ready(function () {
 
 <div id="ncaa-basketball-tournament-prediction-model-home-field-advantage" class="section level2">
 <h2>NCAA Basketball Tournament Prediction Model: Home Field Advantage</h2>
+<div id="explore-data" class="section level3">
+<h3><strong>Explore Data</strong></h3>
+<p>In order to make sense of the data, I first explored it (InitialVisualization_Capstone.R).</p>
+<p>Immediately, I was reminded of the discrepancies in tournament play over time, namely the total field change from 32 to 64 in 1985. One team was added to the mix in 2001. In the 2011 season 4 teams were added – solidifying the current (2018) 68-team tournament. As such, properly filtering out data pre-XXXX will be an important item to consider.</p>
+<p>In addition, accurate team locations (latitude and longitude) is essential to proving my hypothesis. No such information is available, so I will need to write a script to pull the coordinates. The ggmap package fulfils this need.</p>
+<p>Also there is a wealth of regular season data, the model should be first built on the tournament data before expanding.</p>
+<p>The venue data that was sourced includes specific stadiums unique to ncaa women’s teams, and needs to be filtered</p>
+</div>
 <div id="apply-statistics" class="section level3">
 <h3><strong>Apply Statistics</strong></h3>
+<p>teams &lt;- data.table(teams) seeds &lt;- data.table(seeds) seas_compact_res &lt;- data.table(seas_compact_res) tour_compact_res &lt;- data.table(tour_compact_res)</p>
+<p>setkey(teams, TeamID) setkey(seeds, TeamID)</p>
+<p>g1 &lt;- teams[seeds][, one_seed := as.numeric(substr(Seed, 2, 3)) == 1][, sum(one_seed), by = TeamName][order(V1, decreasing = T)][1:20,] %&gt;% ggplot(aes(x = reorder(TeamName, V1), y = V1,label = V1)) + geom_text(color=“white”, size=2) + geom_point(stat = ‘identity’, fill = ‘darkblue’,size = 4) + geom_segment(aes(y=0,x = reorder(TeamName, V1), yend = V1,xend =reorder(TeamName, V1) ),color = ‘black’) + labs(x = ‘’, y = ’No 1 seeds’, title = ‘No. 1 Seeds since 1985’) + coord_flip()</p>
+<p>setkey(seas_compact_res,WTeamID) g2 &lt;- seas_compact_res[teams][, .(wins = .N), by = TeamName][order(-wins)][1:20,] %&gt;% ggplot(aes(x = reorder(TeamName, wins), y = wins,label = wins)) + geom_text(color=“white”, size=2) + geom_point(stat = ‘identity’, fill = ‘darkblue’,size = 4) + geom_segment(aes(y=0,x = reorder(TeamName,wins), yend = wins,xend =reorder(TeamName, wins) ),color = ‘black’) + labs(x = ‘’, y = ’Wins’, title = ‘Regular Season Wins since 1985’) + coord_flip()</p>
+<p>setkey(tour_compact_res, WTeamID)</p>
+<p>g3 &lt;- tour_compact_res[teams][, .(wins = .N), by = TeamName][order(-wins)][1:20,] %&gt;% ggplot(aes(x = reorder(TeamName, wins), y = wins,label = wins)) + geom_text(color=“white”, size=2) + geom_point(stat = ‘identity’, fill = ‘darkblue’,size = 4) + geom_segment(aes(y=0,x = reorder(TeamName,wins), yend = wins,xend =reorder(TeamName, wins) ),color = ‘black’) + labs(x = ‘’, y = ’Wins’, title = ‘Tournament Wins since 1985’) + coord_flip()</p>
+<p>g4 &lt;- tour_compact_res[teams][DayNum == 154, .(wins = .N), by = TeamName][order(-wins)][0:20,] %&gt;% ggplot(aes(x = reorder(TeamName, wins), y = wins,label = wins)) + geom_text(color=“white”, size=2)+ geom_point(stat = ‘identity’, fill = ‘darkblue’,size = 4) + geom_segment(aes(y=0,x = reorder(TeamName,wins), yend = wins,xend =reorder(TeamName, wins) ),color = ‘black’) + labs(x = ‘’, y = ’Championships’, title = ‘Tournament Championships since 1985’) + coord_flip()</p>
+<p>grid.arrange(g1, g2, g3, g4, nrow = 2)</p>
 </div>
 <div id="interesting-findings" class="section level3">
 <h3><strong>Interesting Findings</strong></h3>
-<p>In order to make sense of the data, I decided to first use the</p>
-<p>Given the subject matter, a lot of trends that I found met my expectations. For instance, one</p>
+<p>Duke, North Carolina, and Kansas are tied 13 for most overall number one seeds. Since 1985, Duke has the most overall wins, therefore not surprisingly the most championship titles (5) in the tournament.</p>
 </div>
 <div id="actions" class="section level3">
 <h3><strong>Actions</strong></h3>
+<p>The ggmap package, though accurate, incurred an error best described as a time-out between calls. As such, a loop will need to be developed to manageably pull this information. For this case, a while loop should suffice.</p>
+<p>The other thing that became apparent was a need to compute distances between related coordinates. The geosphere package is a good solution for this. Further testing may be required on this package.</p>
 </div>
 </div>
 
