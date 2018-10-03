@@ -109,6 +109,7 @@ df11$Home_Arena <- str_replace(df11$Home_Arena, "\\[[:alpha:]\\]", "")
 df11$Home_Arena <- str_replace(df11$Home_Arena, "\\[[:alpha:]\\]", "")
 df11$Home_Team <- str_replace(df11$Home_Team, "\\[[:alpha:]\\]", "")
 df11$Home_Capacity <- str_replace(df11$Home_Capacity, "\\[[:digit:]\\]", "")
+df11$Home_Team_Match <- str_to_title(df11$Home_Team_Match)
 
 #alternate data cleaning attempt
 ###setkey(ncaa_table, Season, DayNum)

@@ -7,6 +7,10 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+Packages <- c("readxl", "tidyverse", "tidytext", "stringr", "ggmap", "naniar", "data.table")
+lapply(Packages, library, character.only = TRUE)
+
 ```
 
 ## NCAA Basketball Tournament Prediction Model: Home Field Advantage
@@ -24,31 +28,83 @@ Also there is a wealth of regular season data, the model should be first built o
 The venue data that was sourced includes specific stadiums unique to ncaa women's teams, and needs to be filtered 
 
 ### **Apply Statistics**
+df11 <- read_csv("Data/df11.csv")
 
 ```{r, include=FALSE}
-df11 <- read_csv("Data/df11.csv")
 ncaa_table <- data.table(df11)
-
 e1 <- ncaa_table %>%
   select(Season, Seeding, Home_Team_Match, TeamID) %>% 
   unique() %>%
-  filter(Season %in% (2007:2017)) %>%
+  filter(Season %in% (2010:2017)) %>%
   filter(Seeding == 1) %>% 
   group_by(Home_Team_Match) %>% 
   tally() %>% 
   top_n (n = 10) %>% 
-  arrange(desc(n))
+  arrange(desc(n)) 
+
+e2 <- ncaa_table %>%
+  select(Season, Tourney_State, Home_Team_Match, TeamID) %>% 
+  unique() %>%
+  filter(Season %in% (2010:2017)) %>%
+  group_by(Home_Team_Match) %>% 
+  tally() %>% 
+  top_n (n = 10) %>% 
+  arrange(desc(n)) 
+
+e3 <- ncaa_table %>%
+  select(Season, TeamID.Type, Home_Team_Match, TeamID) %>% 
+  unique() %>%
+  filter(Season %in% (2010:2017)) %>%
+  filter(TeamID.Type == "WTeamID") %>%
+  group_by(Home_Team_Match) %>% 
+  tally() %>% 
+  top_n (n = 10) %>% 
+  arrange(desc(n)) 
+
 ```
 
 #### **stats 1**
 ```{r}
-print(e1)
+
+e1 %>% 
+ggplot(aes(x = reorder(Home_Team_Match, n), y = n,label = n)) + geom_text(color="white", size=2) +
+    geom_point(stat = 'identity', fill = 'darkblue',size = 4) + geom_segment(aes(y=0,x = reorder(Home_Team_Match, n), yend = n,xend =reorder(Home_Team_Match, n) ),color = 'black') +
+    labs(x = '', y = 'No 1 seeds', title = 'No. 1 Seeds from 2010 - 2017') +
+    coord_flip()
 ```
+
+#### **stats 2**
+```{r}
+
+e2 %>% 
+ggplot(aes(x = reorder(Home_Team_Match, n), y = n,label = n)) + geom_text(color="white", size=2) +
+    geom_point(stat = 'identity', fill = 'darkblue',size = 4) + geom_segment(aes(y=0,x = reorder(Home_Team_Match, n), yend = n,xend =reorder(Home_Team_Match, n) ),color = 'black') +
+    labs(x = '', y = '', title = 'Tournament Site Locations Since 2010') +
+    coord_flip()
+```
+
+#### **stats 3**
+```{r}
+
+e3 %>% 
+ggplot(aes(x = reorder(Home_Team_Match, n), y = n,label = n)) + geom_text(color="white", size=2) +
+    geom_point(stat = 'identity', fill = 'darkblue',size = 4) + geom_segment(aes(y=0,x = reorder(Home_Team_Match, n), yend = n,xend =reorder(Home_Team_Match, n) ),color = 'black') +
+    labs(x = '', y = '', title = 'Tournament Wins Since 2010') +
+    coord_flip()
+```
+
+
 
 ### **Interesting Findings**
 
-Duke, North Carolina, and Kansas are tied 13 for most overall number one seeds.
-Since 1985, Duke has the most overall wins, therefore not surprisingly the most championship titles (5) in the tournament.
+Kansas has received the most #1 seeds since 2010 with 5. The next closest teams have each received 3 (North Carolina, Kentucky, and Duke).
+
+Over that same time frame, Kansas is tied for third in frequency of hosting tournament games.
+
+Interestingly enough, Kanasas has won the most games in the NCAA tournament.
+
+Although it is too early to tell, this gives credence to the theory that distance can be a predictor of winning in the tournament.
+
 
 ### **Actions**
 The ggmap package, though accurate, incurred an error best described as a time-out between calls. As such, a loop will need to be developed to manageably pull this information. For this case, a while loop should suffice.
