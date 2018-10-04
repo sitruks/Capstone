@@ -11,24 +11,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### **Goal**
 
-To establish a machine learning model to prove that distance can be used as a predictor for winning games. 
+To establish a machine learning model that prove my hypothesis that distance can be used as a predictor for winning games. 
 
-Specifically, I will use the distance of a team's home school stadium to the NCAA tournament venue stadium can be used as a predictor for winning games. 
+To prove this, I decided to use the data from the NCAA tournament. For one thing, I am familiar with the data, so my assumption is that it would ease the data cleaning and expedite my analysis of the subject. It also could be asserted that compared to most other organized sports, a basketball team, which only plays 5 players on each side, has less variability, and thus should yield dependable results. There is also a wealth of this data made available by Google in collaboration with a stats competition via the website Kaggle. Aside from data cleaning, I had to import school names and locations, and appended latitude/longitude coordinates in order to calculate distance. This distance variable was then applied to the prediction model in order to test the hypothesis. 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+1. Supervised learning, logistic regression
+2. Essentially, all the losers' in-game stats and the winners' in-game stats
+3. glmnet: Lasso and Elastic-Net Regularized Generalized Linear Models
+4. coefficient of winning team versus the losing team
