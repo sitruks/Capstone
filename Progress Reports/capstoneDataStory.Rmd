@@ -1,7 +1,5 @@
 ---
 title: "Capstone Data Story"
-author: "Sitruks"
-date: "October 3, 2018"
 output: html_document
 ---
 
