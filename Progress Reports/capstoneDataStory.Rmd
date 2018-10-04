@@ -1,0 +1,70 @@
+---
+title: "Capstone Data Story"
+author: "Sitruks"
+date: "October 3, 2018"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+```
+
+## NCAA Basketball Tournament Prediction Model: Home Field Advantage
+
+### **Intro**
+The Pit.  
+Albuqerque, NM.  
+Latitude: -106.63226  
+Longitude: 35.06703  
+Capacity: 15,411  
+School: University of New Mexico  
+Home Team: Lobos  
+City Population: 418,839 (1995)  
+  
+At age six, I first experienced a college basketball game.   
+  
+In a city like ABQ, the spontaneous gathering of faithful unleashed a rare, yet inevitable force: traffic. Though the recollection of sudden gridlock left an impression, there was a more powerful force that I witnessed that day which truly became etched in my memory. It was as my father and I parked and began walking to the stadium that I first felt that peculiar, lasting presence -- a sensation my six year-old self easily brushed aside amidst the maddness.  
+  
+As the ticket-taker cermoniously ripped the bottom stubs of our tickets, I became immersed in the event. Inside the stadium was a sea of red and grey clad fans, high on the prospect of victory. Dressed in the home whites, I fit right in. At our seats my father explained the game to me. It was very high level stuff for one in elementary school, so I made sense of a certain unversal truth to guide my understanding. The truth, the team with the most points when the game is over wins.  
+  
+As such, I became attuned to numbers throughout the event.  
+2 for this.  
+3 for that.  
+1 for what?  
+...and one letter, signed, could stop time.  
+  
+A certain number caught my attention in the second half. Coincidentally, it was the number six. Perhaps, because it was my age at the time, I afforded it a little more attention than necessary. But anyone, big or small, could just as easily become enveloped in the illuminated six count spectacle if it were their first time as well. Today, with my adult lens, I can still see that decibal meter, which visualizes sound on an asecending six scale, as clear as day. The sixth man as it were, is very much alive in my memory.  
+  
+From that day, the sixth man -- concept of a home field advantage -- became cemented. Without a means to prove this hunch, I have largely internalized it as a sort of magic. However, thanks to the Springboard course, I was presented with the tools to finally test this theory.  
+  
+I have prepared 15 years worth of NCAA Tournament data. Utilizing machine learning algorithms and data science principles, I will seek to prove my long standing hypothesis that "the home field advantage" exists. More specifically, I will seek to prove that distance of one's home school stadium to the NCAA tournament venue stadium can be used as a predictor for winning games.  
+  
+
+### **Deep Dive Into Data**
+  
+In order to make sense of the data, I first explored it (InitialVisualization_Capstone.R).  
+  
+Immediately, I was reminded of the discrepancies in tournament play over time, namely the total field change from 32 to 64 in 1985. One team was added to the mix in 2001. In the 2011 season 4 teams were added -- solidifying the current (2018) 68-team tournament. As such, properly filtering out data pre-XXXX will be an important item to consider.   
+  
+In addition, accurate team locations (latitude and longitude) is essential to proving my hypothesis. No such information is available, so I will need to write a script to pull the coordinates. The ggmap package fulfils this need.   
+  
+Also there is a wealth of regular season data, the model should be first built on the tournament data before expanding.  
+  
+The venue data that was sourced includes specific stadiums unique to ncaa women's teams, and needs to be filtered   
+  
+The ggmap package, though accurate, incurred an error best described as a time-out between calls. As such, a loop will need to be developed to manageably pull this information. For this case, a while loop should suffice.  
+  
+The other thing that became apparent was a need to compute distances between related coordinates. The geosphere package is a good solution for this. Further testing may be required on this package.  
+  
+Further cleaning of the dataset to remove/clean text strings.  
+
+### **Approach**
+
+The plan for analysis will be to be as follows:
+
+1. Final data cleaning
+2. Predictor variable setup
+3. Visualize predictors
+4. Cross validation
+ 
+

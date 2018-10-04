@@ -8,9 +8,14 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-Packages <- c("readxl", "tidyverse", "tidytext", "stringr", "ggmap", "naniar", "data.table")
+Packages <- c("readxl", "tidyverse", "tidytext", "stringr", "ggmap", "naniar", "data.table", "readr")
 lapply(Packages, library, character.only = TRUE)
+```
 
+
+```{r}
+
+df11 <- read_csv('Data/df11.csv')
 ```
 
 ## NCAA Basketball Tournament Prediction Model: Home Field Advantage
@@ -28,7 +33,7 @@ Also there is a wealth of regular season data, the model should be first built o
 The venue data that was sourced includes specific stadiums unique to ncaa women's teams, and needs to be filtered 
 
 ### **Apply Statistics**
-df11 <- read_csv("Data/df11.csv")
+
 
 ```{r, include=FALSE}
 ncaa_table <- data.table(df11)
